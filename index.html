@@ -1,18 +1,1116 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 <head>
-  <title>Aatos Marketing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aatos Marketing | Facebook- ja Instagram-mainonta palveluyrityksille</title>
+  <meta name="description" content="Aatos Marketing auttaa palveluyrityksiä saamaan enemmän varauksia Facebook- ja Instagram-mainonnalla." />
+
+  <style>
+    :root {
+      --bg: #050607;
+      --bg-soft: #0b0d0f;
+      --card: rgba(255, 255, 255, 0.035);
+      --card-strong: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.12);
+      --border-gold: rgba(238, 174, 61, 0.45);
+      --text: #f7f7f7;
+      --muted: #c8c8c8;
+      --soft: #8f8f8f;
+      --gold: #f2b83b;
+      --gold-2: #ffce63;
+      --gold-dark: #b87912;
+      --shadow: 0 25px 80px rgba(0, 0, 0, 0.55);
+      --radius: 20px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 75% 8%, rgba(242, 184, 59, 0.14), transparent 28%),
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.06), transparent 30%),
+        linear-gradient(180deg, #070809 0%, #050607 45%, #070809 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: clamp(58px, 8vw, 96px) 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 800ms ease, transform 800ms ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5, 6, 7, 0.72);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: fit-content;
+    }
+
+    .brand-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 999px;
+      object-fit: cover;
+      filter: drop-shadow(0 0 14px rgba(242, 184, 59, 0.14));
+    }
+
+    .brand-text {
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .brand-text span {
+      color: var(--gold);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.94rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color 200ms ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -14px;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 999px;
+    }
+
+    .nav-cta {
+      border: 1px solid var(--gold);
+      padding: 14px 24px;
+      border-radius: 10px;
+      transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .nav-cta:hover {
+      background: rgba(242,184,59,0.12);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 35px rgba(242,184,59,0.12);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    .hero {
+      min-height: calc(100vh - 86px);
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      align-items: center;
+      gap: 40px;
+      padding: clamp(44px, 7vw, 78px) 0 0;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-copy {
+      padding-bottom: 78px;
+      max-width: 610px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 5.1vw, 4.55rem);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      font-weight: 850;
+      margin-bottom: 24px;
+    }
+
+    .gold {
+      color: var(--gold);
+      text-shadow: 0 0 28px rgba(242,184,59,0.12);
+    }
+
+    .hero p {
+      color: rgba(255,255,255,0.82);
+      font-size: clamp(1rem, 1.35vw, 1.13rem);
+      max-width: 600px;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 1rem;
+      border-radius: 10px;
+      padding: 17px 28px;
+      min-height: 58px;
+      transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      color: #0b0b0b;
+      box-shadow: 0 18px 48px rgba(242,184,59,0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 62px rgba(242,184,59,0.28);
+      filter: saturate(1.05);
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.93rem;
+    }
+
+    .hero-note svg {
+      color: var(--gold);
+      flex: 0 0 auto;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      width: min(620px, 90vw);
+      height: min(620px, 90vw);
+      border-radius: 999px;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 35%, transparent 68%);
+      filter: blur(4px);
+      z-index: 0;
+    }
+
+    .hero-person {
+      position: relative;
+      z-index: 1;
+      width: min(560px, 100%);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 35px 55px rgba(0,0,0,0.45));
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+      font-weight: 820;
+    }
+
+    .title-line {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-2));
+      margin: 0 auto;
+      border-radius: 999px;
+    }
+
+    .about-text {
+      max-width: 720px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.82);
+      font-size: clamp(1.03rem, 1.6vw, 1.18rem);
+    }
+
+    .about-text p + p {
+      margin-top: 22px;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .problem-card,
+    .step-card {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.022));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 34px 34px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.24);
+      position: relative;
+      overflow: hidden;
+      transition: transform 230ms ease, border-color 230ms ease, background 230ms ease;
+    }
+
+    .problem-card::after,
+    .step-card::after,
+    .contact-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 18% 0%, rgba(242,184,59,0.08), transparent 36%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 230ms ease;
+    }
+
+    .problem-card:hover,
+    .step-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(242,184,59,0.36);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+    }
+
+    .problem-card:hover::after,
+    .step-card:hover::after {
+      opacity: 1;
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+
+    .problem-card h3,
+    .step-card h3 {
+      font-size: 1.28rem;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .problem-card p,
+    .step-card p {
+      color: rgba(255,255,255,0.68);
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .steps-wrap {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .step-card {
+      padding: 30px 24px;
+      min-height: 210px;
+    }
+
+    .step-number {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      color: #0b0b0b;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(242,184,59,0.18);
+      z-index: 3;
+    }
+
+    .step-card .icon {
+      width: 42px;
+      height: 42px;
+      margin-top: 18px;
+      margin-bottom: 18px;
+    }
+
+    .arrow {
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 2.4rem;
+      font-weight: 900;
+      opacity: 0.95;
+    }
+
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.95fr 1.25fr;
+      gap: 54px;
+      background:
+        radial-gradient(circle at 0% 100%, rgba(242,184,59,0.12), transparent 26%),
+        linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
+      border: 1px solid var(--border-gold);
+      border-radius: 22px;
+      padding: clamp(28px, 5vw, 48px);
+      box-shadow: 0 0 42px rgba(242,184,59,0.10), var(--shadow);
+    }
+
+    .contact-copy h2 {
+      font-size: clamp(2rem, 3.1vw, 3.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    .contact-copy .title-line {
+      margin: 0 0 22px;
+    }
+
+    .contact-copy p {
+      color: rgba(255,255,255,0.76);
+      margin-bottom: 26px;
+      font-size: 1.03rem;
+    }
+
+    .checks {
+      display: grid;
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.86);
+      font-weight: 550;
+    }
+
+    .check svg {
+      color: var(--gold);
+      flex: 0 0 auto;
+    }
+
+    .target-graphic {
+      margin-top: 28px;
+      width: 170px;
+      height: 120px;
+      opacity: 0.9;
+      color: var(--gold);
+    }
+
+    .form {
+      display: grid;
+      gap: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 56px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 9px;
+      background: rgba(0,0,0,0.16);
+      color: var(--text);
+      padding: 0 18px;
+      font: inherit;
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    select {
+      appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.8) 50%),
+        linear-gradient(135deg, rgba(255,255,255,0.8) 50%, transparent 50%);
+      background-position:
+        calc(100% - 23px) 50%,
+        calc(100% - 16px) 50%;
+      background-size: 7px 7px, 7px 7px;
+      background-repeat: no-repeat;
+      color: rgba(255,255,255,0.74);
+    }
+
+    option {
+      background: #111;
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: rgba(255,255,255,0.56);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(242,184,59,0.72);
+      box-shadow: 0 0 0 4px rgba(242,184,59,0.10);
+      background: rgba(255,255,255,0.035);
+    }
+
+    .form .btn {
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: rgba(255,255,255,0.68);
+      font-size: 0.93rem;
+      margin-top: 12px;
+    }
+
+    .privacy svg {
+      color: rgba(255,255,255,0.78);
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .success-note {
+      display: none;
+      border: 1px solid rgba(242,184,59,0.45);
+      background: rgba(242,184,59,0.09);
+      color: rgba(255,255,255,0.88);
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    body.sent .success-note {
+      display: block;
+    }
+
+    .footer {
+      padding: 34px 0 42px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.78);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 0.98rem;
+    }
+
+    .footer-line {
+      width: 1px;
+      height: 22px;
+      background: rgba(255,255,255,0.22);
+    }
+
+    .social {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 180ms ease, transform 180ms ease;
+    }
+
+    .social:hover {
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .social svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 980px) {
+      .container {
+        width: min(100% - 34px, var(--max));
+      }
+
+      .nav {
+        height: auto;
+        min-height: 78px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 10px 0 14px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 14px 12px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.035);
+      }
+
+      .nav-links a.active::after {
+        display: none;
+      }
+
+      .nav-cta {
+        text-align: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 16px;
+        padding-top: 38px;
+      }
+
+      .hero-copy {
+        padding-bottom: 18px;
+      }
+
+      .hero-visual {
+        min-height: auto;
+        max-height: 580px;
+        overflow: hidden;
+      }
+
+      .hero-person {
+        width: min(480px, 100%);
+      }
+
+      .cards-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-wrap {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .arrow {
+        display: none;
+      }
+
+      .step-card {
+        min-height: auto;
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .brand-logo {
+        width: 52px;
+        height: 52px;
+      }
+
+      .brand-text strong {
+        font-size: 1.08rem;
+      }
+
+      .brand-text span {
+        font-size: 0.72rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.15rem, 11vw, 3.35rem);
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 16px 20px;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .problem-card,
+      .step-card {
+        padding: 28px 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        padding: 26px 20px;
+        border-radius: 18px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 13px;
+      }
+
+      .footer-line {
+        display: none;
+      }
+
+      .target-graphic {
+        width: 130px;
+        height: 92px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Aatos Marketing</h1>
+  <div class="page">
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <a class="brand" href="#etusivu" aria-label="Aatos Marketing etusivu">
+            <img class="brand-logo" src="AM_logo.png" alt="Aatos Marketing logo">
+            <div class="brand-text">
+              <strong>AATOS</strong>
+              <span>MARKETING</span>
+            </div>
+          </a>
 
-  <p>Sivusto toimii.</p>
+          <button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button>
 
-  <h2>Logo</h2>
-  <img src="AM_logo.png" alt="Aatos Marketing logo" width="180">
+          <div class="nav-links" id="navLinks">
+            <a class="active" href="#etusivu">Etusivu</a>
+            <a href="#kuka">Kuka on Aatos Marketing</a>
+            <a href="#miksi">Miksi asiakas ei varaa</a>
+            <a href="#miten">Miten autan</a>
+            <a class="nav-cta" href="#yhteys">Ota yhteyttä</a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-  <h2>Aatos-kuva</h2>
-  <img src="aatos-portrait.png" alt="Aatos" width="350">
+    <main>
+      <section class="hero container" id="etusivu">
+        <div class="hero-copy fade-up">
+          <h1>Autan palveluyrityksiä saamaan <span class="gold">enemmän varauksia</span> Facebook- ja Instagram-mainonnalla.</h1>
+          <p>Hyvä palvelu ei aina riitä. Jos uusi asiakas ei ymmärrä nopeasti miksi juuri teille kannattaa varata, mainonnan pitää tehdä palvelun arvo selkeäksi, rakentaa luottamusta ja ohjata asiakas helpommin yhteydenottoon.</p>
+
+          <a class="btn btn-primary" href="#yhteys">
+            Pyydä 2–3 parannuskohtaa
+            <span>→</span>
+          </a>
+
+          <div class="hero-note">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3L19 6V11C19 15.5 16.2 19.5 12 21C7.8 19.5 5 15.5 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9 12L11 14L15 9.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Nopea katsaus. Konkreettisia parannuksia. Ei sitoumuksia.
+          </div>
+        </div>
+
+        <div class="hero-visual fade-up">
+          <img class="hero-person" src="aatos-portrait.png" alt="Aatos Marketing">
+        </div>
+      </section>
+
+      <section class="section" id="kuka">
+        <div class="container">
+          <div class="section-title fade-up">
+            <h2>Kuka on Aatos Marketing?</h2>
+            <div class="title-line"></div>
+          </div>
+
+          <div class="about-text fade-up">
+            <p>Aatos Marketingin takana olen minä, Aatos.</p>
+            <p>Olen huomannut, että monella palveluyrityksellä palvelu on kunnossa, mutta sen arvo ei näy asiakkaalle tarpeeksi selkeästi verkossa.</p>
+            <p>Siksi keskityn Facebook- ja Instagram-mainontaan, joka tekee palvelusta helpommin ymmärrettävän, rakentaa luottamusta ja ohjaa oikeat ihmiset kohti varausta.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="miksi">
+        <div class="container">
+          <div class="section-title fade-up">
+            <h2>Miksi asiakas ei varaa?</h2>
+            <div class="title-line"></div>
+          </div>
+
+          <div class="cards-3">
+            <article class="problem-card fade-up">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <path d="M12 29C12 17.95 20.95 9 32 9C43.05 9 52 17.95 52 29C52 40.05 43.05 49 32 49C28.5 49 25.2 48.1 22.35 46.5L12 51L16.35 40.85C13.6 37.45 12 33.3 12 29Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M32 17V31" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M32 38H32.03" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+              <h3>Palvelu jää epähuomioon</h3>
+              <p>Jos viesti ei ole selkeä, asiakas siirtyy helposti eteenpäin.</p>
+            </article>
+
+            <article class="problem-card fade-up">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <path d="M32 7L51 15V29C51 42 43.5 52.5 32 57C20.5 52.5 13 42 13 29V15L32 7Z" stroke="currentColor" stroke-width="3"/>
+              </svg>
+              <h3>Luottamuksen puute</h3>
+              <p>Heikko ensivaikutelma, puuttuvat todisteet tai epäselvä profiili luovat epävarmuutta.</p>
+            </article>
+
+            <article class="problem-card fade-up">
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <path d="M13 51H53" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M18 38H25V51H18V38Z" stroke="currentColor" stroke-width="3"/>
+                <path d="M30 27H37V51H30V27Z" stroke="currentColor" stroke-width="3"/>
+                <path d="M42 15H49V51H42V15Z" stroke="currentColor" stroke-width="3"/>
+              </svg>
+              <h3>Heikko näkyvyys</h3>
+              <p>Palvelunne ei tavoita oikeita ihmisiä oikeaan aikaan.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="miten">
+        <div class="container">
+          <div class="section-title fade-up">
+            <h2>Miten autan?</h2>
+            <div class="title-line"></div>
+          </div>
+
+          <div class="steps-wrap">
+            <article class="step-card fade-up">
+              <div class="step-number">1</div>
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <circle cx="27" cy="27" r="17" stroke="currentColor" stroke-width="3"/>
+                <path d="M40 40L53 53" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <h3>Katson missä asiakas voi pudota pois</h3>
+              <p>Analysoin viestinnän, näkyvyyden ja asiakaspolun.</p>
+            </article>
+
+            <div class="arrow">›</div>
+
+            <article class="step-card fade-up">
+              <div class="step-number">2</div>
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <path d="M19 13H48V54H16V13H19Z" stroke="currentColor" stroke-width="3"/>
+                <path d="M24 9V18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M41 9V18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M24 28H41" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M24 38H37" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <h3>Ehdotan 2–3 konkreettista parannusta</h3>
+              <p>Saat selkeät ideat, joilla näkyvyyttä ja viestejä voi parantaa.</p>
+            </article>
+
+            <div class="arrow">›</div>
+
+            <article class="step-card fade-up">
+              <div class="step-number">3</div>
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <path d="M12 35H22L45 22V48L22 35" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M22 35V50H16V35" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                <path d="M50 28C54 31 54 39 50 42" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <h3>Rakennan tarvittaessa mainoskampanjan</h3>
+              <p>Luon, testaan ja optimoin mainonnan tuloksien parantamiseksi.</p>
+            </article>
+
+            <div class="arrow">›</div>
+
+            <article class="step-card fade-up">
+              <div class="step-number">4</div>
+              <svg class="icon" viewBox="0 0 64 64" fill="none">
+                <path d="M13 51H53" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <path d="M17 43L28 32L36 39L50 21" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M43 21H50V28" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <h3>Seuraan mikä toimii</h3>
+              <p>Kehitän jatkuvasti sitä, mikä tuo eniten varauksia.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="yhteys">
+        <div class="container">
+          <div class="contact-panel fade-up">
+            <div class="contact-copy">
+              <h2>Haluatko 2–3 parannuskohtaa yrityksesi näkyvyyteen?</h2>
+              <div class="title-line"></div>
+              <p>Jätä yhteystietosi ja yrityksesi tiedot, niin katson nopeasti, missä kohtaa markkinointia voisi selkeyttää ja miten varauksia voisi saada enemmän.</p>
+
+              <div class="checks">
+                <div class="check">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Nopea ja maksuton katsaus
+                </div>
+
+                <div class="check">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Tietosi pysyvät luottamuksellisina
+                </div>
+              </div>
+
+              <svg class="target-graphic" viewBox="0 0 180 130" fill="none">
+                <circle cx="72" cy="68" r="42" stroke="currentColor" stroke-width="6"/>
+                <circle cx="72" cy="68" r="24" stroke="currentColor" stroke-width="6" opacity="0.75"/>
+                <circle cx="72" cy="68" r="7" fill="currentColor"/>
+                <path d="M72 68L132 25" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                <path d="M124 22H144V42" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M125 82C135 82 145 82 155 82" stroke="currentColor" stroke-width="3" stroke-dasharray="3 8" opacity="0.5"/>
+              </svg>
+            </div>
+
+            <div>
+              <div class="success-note">
+                Kiitos! Lomake on lähetetty. Tarkista myös sähköpostisi, jos FormSubmit pyytää ensimmäisellä kerralla vahvistusta.
+              </div>
+
+              <form class="form" action="https://formsubmit.co/aatosmarketing@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Uusi yhteydenotto Aatos Marketing -sivulta">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://aatosniinikoski-cloud.github.io/aatos-marketing-landing-page/?sent=true#yhteys">
+
+                <div class="form-row">
+                  <input type="text" name="Yrityksen nimi" placeholder="Yrityksen nimi *" required>
+                  <input type="text" name="Toimiala" placeholder="Toimiala *" required>
+                </div>
+
+                <input type="text" name="Nettisivu tai someprofiili" placeholder="Nettisivu tai someprofiili">
+                <input type="email" name="Sähköposti" placeholder="Sähköposti *" required>
+
+                <select name="Tärkein tavoite" required>
+                  <option value="">Mikä on tärkein tavoitteenne? *</option>
+                  <option value="Lisää varauksia">Lisää varauksia</option>
+                  <option value="Parempi näkyvyys">Parempi näkyvyys</option>
+                  <option value="Selkeämpi viesti">Selkeämpi viesti</option>
+                  <option value="Facebook- ja Instagram-mainonta">Facebook- ja Instagram-mainonta</option>
+                  <option value="En tiedä vielä">En tiedä vielä</option>
+                </select>
+
+                <button class="btn btn-primary" type="submit">
+                  Pyydä parannuskohdat
+                  <span>→</span>
+                </button>
+
+                <div class="privacy">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <span>Käytän tietoja vain yhteydenottoon ja yrityksenne nopeaan arviointiin. Tietoja ei luovuteta eteenpäin.</span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>Löydät minut myös somesta</span>
+        <div class="footer-line"></div>
+
+        <a class="social" href="https://www.instagram.com/aatosmarketing/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+          </svg>
+          Instagram
+        </a>
+
+        <div class="footer-line"></div>
+
+        <a class="social" href="https://www.facebook.com/profile.php?id=61574307923587&locale=fi_FI" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22V14.97H7.9V12.06H10.44V9.84C10.44 7.32 11.93 5.93 14.22 5.93C15.32 5.93 16.47 6.13 16.47 6.13V8.61H15.2C13.95 8.61 13.56 9.39 13.56 10.19V12.06H16.35L15.9 14.97H13.56V22C18.34 21.24 22 17.08 22 12.06Z"/>
+          </svg>
+          Facebook
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.14
+    });
+
+    document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+    if (new URLSearchParams(window.location.search).get("sent") === "true") {
+      document.body.classList.add("sent");
+    }
+  </script>
 </body>
 </html>
