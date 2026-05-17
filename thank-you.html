@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiitos | Aatos Marketing</title>
+
+  <style>
+    :root {
+      --bg: #050607;
+      --text: #f7f7f7;
+      --muted: #c8c8c8;
+      --gold: #f2b83b;
+      --gold-2: #ffce63;
+      --border-gold: rgba(238, 174, 61, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(242, 184, 59, 0.15), transparent 30%),
+        linear-gradient(180deg, #070809 0%, #050607 100%);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .page {
+      width: min(720px, 100%);
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(242,184,59,0.12), transparent 38%),
+        linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
+      border: 1px solid var(--border-gold);
+      border-radius: 24px;
+      padding: clamp(34px, 6vw, 64px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+    }
+
+    .logo {
+      width: 92px;
+      height: 92px;
+      border-radius: 999px;
+      object-fit: cover;
+      margin: 0 auto 26px;
+      filter: drop-shadow(0 0 18px rgba(242, 184, 59, 0.18));
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      color: #0b0b0b;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+      box-shadow: 0 18px 50px rgba(242,184,59,0.22);
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      margin-bottom: 18px;
+    }
+
+    p {
+      color: rgba(255,255,255,0.78);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.65;
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 56px;
+      padding: 16px 26px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      color: #0b0b0b;
+      font-weight: 850;
+      text-decoration: none;
+      box-shadow: 0 18px 48px rgba(242,184,59,0.22);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 62px rgba(242,184,59,0.28);
+    }
+
+    .small {
+      margin-top: 22px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 620px) {
+      body {
+        padding: 18px;
+      }
+
+      .page {
+        padding: 34px 22px;
+      }
+
+      .logo {
+        width: 76px;
+        height: 76px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <img class="logo" src="AM_logo.png" alt="Aatos Marketing logo">
+
+    <div class="badge">✓</div>
+
+    <h1>Kiitos, sain tiedot.</h1>
+
+    <p>
+      Katson yrityksenne tiedot läpi ja palaan asiaan mahdollisimman pian
+      2–3 konkreettisen parannuskohdan kanssa.
+    </p>
+
+    <a class="btn" href="https://aatosniinikoski-cloud.github.io/aatos-marketing-landing-page/">
+      Takaisin etusivulle →
+    </a>
+
+    <div class="small">
+      Aatos Marketing
+    </div>
+  </main>
+</body>
+</html>
