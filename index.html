@@ -1045,6 +1045,31 @@
         height: 48px !important;
       }
     }
+    
+    /* Make hero portrait edges sharper but keep the same size and position */
+.hero-cutout {
+  filter:
+    drop-shadow(0 22px 34px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 0 16px rgba(242, 184, 59, 0.035));
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 78%,
+    rgba(0,0,0,0.92) 88%,
+    rgba(0,0,0,0.55) 96%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 78%,
+    rgba(0,0,0,0.92) 88%,
+    rgba(0,0,0,0.55) 96%,
+    transparent 100%
+  );
+}
 
   </style>
 <!-- Meta Pixel Code -->
