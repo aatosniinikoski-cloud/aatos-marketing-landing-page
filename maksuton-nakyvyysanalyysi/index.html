@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maksuton näkyvyysanalyysi yritykselle | Aatos Marketing</title>
-  <meta name="description" content="Maksuton näkyvyysanalyysi yritykselle. Aatos Marketing katsoo sivuston, somen ja yhteydenottopolun uuden asiakkaan näkökulmasta. Hinta 0 €." />
+  <title>Maksuton näkyvyysanalyysi | Aatos Marketing</title>
+  <meta name="description" content="Maksuton näkyvyysanalyysi palveluyritykselle. Katson sivuston, somen ja yhteydenottopolun uuden asiakkaan näkökulmasta." />
   <link rel="canonical" href="https://aatosmarketing.fi/maksuton-nakyvyysanalyysi/" />
   <link rel="icon" type="image/png" href="/favicon.png?v=2">
   <link rel="shortcut icon" type="image/png" href="/favicon.png?v=2">
@@ -118,6 +118,27 @@
     .footer-links a:hover { color: var(--gold); border-color: rgba(242,184,59,0.34); }
     .footer-social { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.78); }
     .footer-social-label { color: rgba(255,255,255,0.62); }
+    .footer-social .social,
+    .social {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.94rem;
+      line-height: 1.2;
+      color: rgba(255,255,255,0.78);
+      transition: color 180ms ease, transform 180ms ease;
+    }
+    .footer-social .social svg,
+    .social svg {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+    }
+    .footer-social .social:hover,
+    .social:hover {
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
     @media (max-width: 980px) { .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } .footer-shell { grid-template-columns: 1fr; text-align: left; } .footer-social { justify-content: flex-start; } }
     @media (max-width: 620px) { .service-grid { grid-template-columns: 1fr; } .service-card { padding: 28px 22px; } .footer-brand { align-items: flex-start; } .footer-logo { width: 56px; height: 56px; } .footer-links { grid-template-columns: 1fr; } .footer-social { flex-direction: column; align-items: flex-start; gap: 12px; } }
   
@@ -165,13 +186,13 @@
     <header class="header"><div class="container"><nav class="nav"><a class="brand" href="/" aria-label="Aatos Marketing etusivu"><img class="brand-logo" src="/AM_logo.png" alt="Aatos Marketing logo"><div class="brand-text"><strong>AATOS</strong><span>MARKETING</span></div></a><button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button><div class="nav-links" id="navLinks"><a href="/#palvelut">Palvelut</a><a href="/#hinnasto">Hinnasto</a><a class="nav-cta" href="/#yhteys">Yhteys</a></div></nav></div></header>
 
     <main>
-      <section class="hero"><div class="container hero-inner"><div><p class="eyebrow">Maksuton näkyvyysanalyysi</p><h1><span class="gold">Maksuton näkyvyysanalyysi</span> yritykselle, joka haluaa selkeämmän asiakaspolun.</h1><p class="lead">Katson sivuston, somen ja yhteydenottopolun uuden asiakkaan näkökulmasta ja annan konkreettisia huomioita siitä, mikä voisi estää yhteydenottoja.</p><div class="actions"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="#sisalto">Mitä analyysissä katsotaan <span>→</span></a></div></div><aside class="hero-card"><h2>Hinta 0 €</h2><ul class="check-list"><li>Sivuston ensivaikutelma</li><li>Somen ja sisällön selkeys</li><li>Yhteydenottopolku</li><li>Konkreettiset parannusideat</li></ul></aside></div></section>
+      <section class="hero"><div class="container hero-inner"><div><p class="eyebrow">Maksuton näkyvyysanalyysi</p><h1><span class="gold">Maksuton näkyvyysanalyysi</span> palveluyritykselle</h1><p class="lead">Katson sivuston, somen ja yhteydenottopolun uuden asiakkaan näkökulmasta ja annan konkreettisia huomioita siitä, mikä voisi estää yhteydenottoja.</p><div class="actions"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="#sisalto">Mitä analyysissä katsotaan <span>→</span></a></div></div><aside class="hero-card"><h2>Hinta 0 €</h2><ul class="check-list"><li>Sivuston ensivaikutelma</li><li>Somen ja sisällön selkeys</li><li>Yhteydenottopolku</li><li>Konkreettiset parannusideat</li></ul></aside></div></section>
 
       <section class="section" id="sisalto"><div class="container"><div class="section-title"><h2>Mitä analyysissä katsotaan?</h2><p>Analyysi ei ole raskas raportti, vaan selkeä ensimmäinen katsaus siihen, mitä uusi asiakas näkee ja missä kohtaa hän voi pudota pois.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Verkkosivut</h3><p>Katsotaan, ymmärtääkö asiakas nopeasti mitä tarjoatte, kenelle palvelu sopii ja miten yhteydenotto tapahtuu.</p></article><article class="card"><h3>Some ja sisältö</h3><p>Katsotaan, tukeeko sisältö luottamusta ja kertooko se palvelusta riittävän selkeästi.</p></article><article class="card"><h3>Asiakaspolku</h3><p>Katsotaan, onko seuraava askel helppo: lomake, varaus, viesti tai muu yhteydenottotapa.</p></article></div></div></section>
 
       <section class="section"><div class="container"><div class="section-title"><h2>Kenelle se sopii?</h2><p>Näkyvyysanalyysi sopii erityisesti palveluyritykselle, joka haluaa lisää yhteydenottoja mutta ei ole varma, mistä kannattaa aloittaa.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Kun sivusto tuntuu epäselvältä</h3><p>Jos kävijöitä on, mutta yhteydenottoja ei synny, ongelma voi olla viestissä tai polussa.</p></article><article class="card"><h3>Kun some ei tue myyntiä</h3><p>Jos sisältö on satunnaista tai ei kerro palvelusta tarpeeksi, asiakas ei välttämättä saa syytä ottaa yhteyttä.</p></article><article class="card"><h3>Kun et tiedä mikä paketti sopii</h3><p>Analyysi auttaa valitsemaan, kannattaako aloittaa verkkosivuista, sisällöstä, videoista vai mainonnasta.</p></article></div></div></section>
 
-      <section class="section"><div class="container"><div class="section-title"><h2>Mitä asiakas saa analyysin jälkeen?</h2><p>Saat käytännönläheisiä huomioita siitä, mitä voisi selkeyttää, jotta yrityksen näkyvyys tukisi paremmin yhteydenottoja ja varauksia.</p><div class="title-line"></div></div><div class="grid-2"><article class="card"><h3>Selkeät havainnot</h3><ul class="check-list"><li>Mikä nykyisessä näkyvyydessä toimii</li><li>Mikä voi aiheuttaa epävarmuutta</li><li>Missä kohtaa yhteydenotto voi jäädä kesken</li><li>Mitä kannattaa tehdä ensimmäiseksi</li></ul></article><article class="card"><h3>Mahdollinen jatkosuositus</h3><ul class="check-list"><li>Verkkosivujen selkeytys</li><li>Sisällöt someen</li><li>Lyhytvideoiden editointi</li><li>Facebook- ja Instagram-mainonta</li></ul></article></div></div></section>
+      <section class="section"><div class="container"><div class="section-title"><h2>Mitä saat analyysin jälkeen?</h2><p>Saat käytännönläheisiä huomioita siitä, mitä voisi selkeyttää, jotta yrityksen näkyvyys tukisi paremmin yhteydenottoja ja varauksia.</p><div class="title-line"></div></div><div class="grid-2"><article class="card"><h3>Selkeät havainnot</h3><ul class="check-list"><li>Mikä nykyisessä näkyvyydessä toimii</li><li>Mikä voi aiheuttaa epävarmuutta</li><li>Missä kohtaa yhteydenotto voi jäädä kesken</li><li>Mitä kannattaa tehdä ensimmäiseksi</li></ul></article><article class="card"><h3>Mahdollinen jatkosuositus</h3><ul class="check-list"><li>Verkkosivujen selkeytys</li><li>Sisällöt someen</li><li>Lyhytvideoiden editointi</li><li>Facebook- ja Instagram-mainonta</li></ul></article></div></div></section>
 
       <section class="section" id="hinta"><div class="container"><div class="price-panel"><div><p class="eyebrow">Hinta</p><h2>Maksuton näkyvyysanalyysi</h2><p>Analyysi on maksuton eikä sido sinua tilaamaan jatkotyötä. Saat ensimmäisen näkemyksen siitä, mistä kehitys kannattaa aloittaa.</p></div><strong class="price">0 €</strong></div></div></section>
 

@@ -120,6 +120,27 @@
     .footer-links a:hover { color: var(--gold); border-color: rgba(242,184,59,0.34); }
     .footer-social { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.78); }
     .footer-social-label { color: rgba(255,255,255,0.62); }
+    .footer-social .social,
+    .social {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.94rem;
+      line-height: 1.2;
+      color: rgba(255,255,255,0.78);
+      transition: color 180ms ease, transform 180ms ease;
+    }
+    .footer-social .social svg,
+    .social svg {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+    }
+    .footer-social .social:hover,
+    .social:hover {
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
     @media (max-width: 980px) { .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } .footer-shell { grid-template-columns: 1fr; text-align: left; } .footer-social { justify-content: flex-start; } }
     @media (max-width: 620px) { .service-grid { grid-template-columns: 1fr; } .service-card { padding: 28px 22px; } .footer-brand { align-items: flex-start; } .footer-logo { width: 56px; height: 56px; } .footer-links { grid-template-columns: 1fr; } .footer-social { flex-direction: column; align-items: flex-start; gap: 12px; } }
   
@@ -167,11 +188,11 @@
     <header class="header"><div class="container"><nav class="nav"><a class="brand" href="/" aria-label="Aatos Marketing etusivu"><img class="brand-logo" src="/AM_logo.png" alt="Aatos Marketing logo"><div class="brand-text"><strong>AATOS</strong><span>MARKETING</span></div></a><button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button><div class="nav-links" id="navLinks"><a href="/#palvelut">Palvelut</a><a href="/#hinnasto">Hinnasto</a><a class="nav-cta" href="/#yhteys">Yhteys</a></div></nav></div></header>
 
     <main>
-      <section class="hero"><div class="container hero-inner"><div><p class="eyebrow">Facebook- ja Instagram-mainonta</p><h1><span class="gold">Facebook- ja Instagram-mainonta</span> palveluyritykselle, joka haluaa lisää yhteydenottoja.</h1><p class="lead">Autan rakentamaan selkeän Facebook- ja Instagram-mainonnan kokonaisuuden, jossa tavoite, viesti, kohderyhmä ja jatkopolku tukevat yhteydenottoja.</p><div class="actions"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="#hinta">Katso hinnat <span>→</span></a></div></div><aside class="hero-card"><h2>Facebook- ja Instagram-mainonnan testijakso alk. 300 €</h2><ul class="check-list"><li>Kampanjarakenne ja tavoite</li><li>Ensimmäinen Facebook- ja Instagram-kampanja</li><li>Seuranta ja tulosten läpikäynti</li><li>Mainosbudjetti maksetaan erikseen mainosalustalle</li></ul></aside></div></section>
+      <section class="hero"><div class="container hero-inner"><div><p class="eyebrow">Facebook- ja Instagram-mainonta</p><h1><span class="gold">Facebook- ja Instagram-mainonta</span> palveluyritykselle</h1><p class="lead">Autan rakentamaan selkeän Facebook- ja Instagram-mainonnan kokonaisuuden, jossa tavoite, viesti, kohderyhmä ja jatkopolku tukevat yhteydenottoja.</p><div class="actions"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="#hinta">Katso hinnat <span>→</span></a></div></div><aside class="hero-card"><h2>Facebook- ja Instagram-mainonnan testijakso alk. 300 €</h2><ul class="check-list"><li>Kampanjarakenne ja tavoite</li><li>Ensimmäinen Facebook- ja Instagram-kampanja</li><li>Seuranta ja tulosten läpikäynti</li><li>Mainosbudjetti maksetaan erikseen mainosalustalle</li></ul></aside></div></section>
 
       <section class="section"><div class="container"><div class="section-title"><h2>Kenelle palvelu sopii?</h2><p>Palvelu sopii palveluyritykselle, joka haluaa tavoittaa oikeita ihmisiä paikallisesti tai tietyn kohderyhmän sisällä.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Paikallisille palveluille</h3><p>Kun palvelu ostetaan yhteydenoton, varauksen tai tarjouspyynnön kautta, mainonnan pitää tehdä seuraava askel helpoksi.</p></article><article class="card"><h3>Yrityksille, joilla on selkeä tarjous</h3><p>Mainonta toimii parhaiten, kun palvelu, hyöty ja yhteydenottopolku ovat riittävän selkeät.</p></article><article class="card"><h3>Kasvua hakeville yrityksille</h3><p>Facebook- ja Instagram-mainonta voi tuoda näkyvyyttä nopeammin kuin pelkkä orgaaninen sisältö, kun kokonaisuus on rakennettu järkevästi.</p></article></div></div></section>
 
-      <section class="section"><div class="container"><div class="section-title"><h2>Mitä asiakas saa?</h2><p>Tavoitteena on mainonta, jossa jokainen osa tukee yhteydenottoa eikä kampanja jää vain näkyvyyden ostamiseksi.</p><div class="title-line"></div></div><div class="grid-2"><article class="card"><h3>Aloitus ja kampanjarakenne</h3><ul class="check-list"><li>Tavoitteen ja kohderyhmän määrittely</li><li>Mainosviestin ja kulman selkeytys</li><li>Kampanjan perusasetukset</li><li>Yhteydenottopolun tarkistus</li></ul></article><article class="card"><h3>Testijakson seuranta</h3><ul class="check-list"><li>Tulosten seuranta</li><li>Mainosten kevyt optimointi</li><li>Tulosten läpikäynti sovitun jakson aikana</li><li>Selkeä suositus mahdollisesta jatkosta</li></ul></article></div></div></section>
+      <section class="section"><div class="container"><div class="section-title"><h2>Mitä saat?</h2><p>Tavoitteena on mainonta, jossa jokainen osa tukee yhteydenottoa eikä kampanja jää vain näkyvyyden ostamiseksi.</p><div class="title-line"></div></div><div class="grid-2"><article class="card"><h3>Aloitus ja kampanjarakenne</h3><ul class="check-list"><li>Tavoitteen ja kohderyhmän määrittely</li><li>Mainosviestin ja kulman selkeytys</li><li>Kampanjan perusasetukset</li><li>Yhteydenottopolun tarkistus</li></ul></article><article class="card"><h3>Testijakson seuranta</h3><ul class="check-list"><li>Tulosten seuranta</li><li>Mainosten kevyt optimointi</li><li>Tulosten läpikäynti sovitun jakson aikana</li><li>Selkeä suositus mahdollisesta jatkosta</li></ul></article></div></div></section>
 
       <section class="section"><div class="container"><div class="section-title"><h2>Miksi Facebook- ja Instagram-mainonta voi tuoda lisää yhteydenottoja?</h2><p>Facebook- ja Instagram-mainonta auttaa viemään selkeän palveluviestin oikeiden ihmisten eteen. Kun mainos ja laskeutumissivu vastaavat asiakkaan tarpeeseen, yhteydenoton kynnys madaltuu.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Oikeampi kohderyhmä</h3><p>Mainontaa voidaan suunnata ihmisille, joille palvelu on todennäköisesti ajankohtainen.</p></article><article class="card"><h3>Selkeä viesti toistuu</h3><p>Asiakas näkee yrityksen ja tarjonnan useammin, mikä auttaa luottamuksen rakentamisessa.</p></article><article class="card"><h3>Yhteydenotto ohjataan suoraan</h3><p>Mainos ohjaa sivulle tai lomakkeeseen, jossa seuraava askel on näkyvä ja helppo.</p></article></div></div></section>
 
