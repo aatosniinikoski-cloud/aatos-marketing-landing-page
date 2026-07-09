@@ -380,7 +380,7 @@
               <p>Jätä yhteystietosi ja yrityksesi tiedot, niin katson sivut, somen ja asiakaspolun uuden asiakkaan näkökulmasta. Saat konkreettisia huomioita siitä, mitä voisi selkeyttää, jotta yhteydenottoja ja varauksia voisi syntyä enemmän. Vastaan 1-3 päivän sisällä.</p>
               <div class="checks"><div class="check">Maksuton näkyvyysanalyysi</div><div class="check">Tietosi pysyvät luottamuksellisina</div></div>
             </div>
-            <form class="form" action="https://api.web3forms.com/submit" method="POST">
+            <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="be1faa39-ab23-4b3e-87ac-1aafee211101">
               <input type="hidden" name="subject" value="Uusi yhteydenotto Aatos Marketing -sivulta">
               <input type="hidden" name="redirect" value="https://aatosmarketing.fi/kiitos.html">
@@ -456,6 +456,56 @@
         menuBtn.textContent = "☰";
       });
     });
+
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonHtml = submitButton ? submitButton.innerHTML : "";
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.innerHTML = "Lähetetään...";
+        }
+
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+
+          let result = {};
+          try {
+            result = await response.json();
+          } catch (error) {
+            result = {};
+          }
+
+          if (response.ok && (result.success === true || response.status === 200)) {
+            window.location.href = "https://aatosmarketing.fi/kiitos.html";
+            return;
+          }
+
+          throw new Error(result.message || "Lomakkeen lähetys epäonnistui.");
+        } catch (error) {
+          alert("Lomakkeen lähetys ei onnistunut. Yritä hetken päästä uudelleen tai ota yhteyttä suoraan sähköpostilla.");
+
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonHtml || "Lähetä";
+          }
+        }
+      });
+    }
   </script>
 </body>
 </html>
