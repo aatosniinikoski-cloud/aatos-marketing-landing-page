@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verkkosivut palveluyritykselle | Aatos Marketing</title>
+  <meta name="description" content="Selkeät verkkosivut palveluyritykselle alk. 500 €. Aatos Marketing auttaa rakentamaan sivun, joka kertoo palvelun arvon ja ohjaa yhteydenottoon." />
+  <link rel="canonical" href="https://aatosmarketing.fi/verkkosivut-palveluyritykselle/" />
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="shortcut icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="/favicon.png?v=2">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CETXR485ET"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CETXR485ET');
+  </script>
+
+  <style>
+    :root { --bg:#050607; --panel:rgba(255,255,255,0.055); --panel-soft:rgba(255,255,255,0.028); --border:rgba(255,255,255,0.13); --gold:#f2b83b; --gold-2:#ffce63; --text:#f7f7f7; --muted:rgba(255,255,255,0.74); --max:1120px; --shadow:0 25px 80px rgba(0,0,0,0.55); }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:radial-gradient(circle at 78% 8%, rgba(242,184,59,0.14), transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 30%), linear-gradient(180deg, #070809 0%, var(--bg) 48%, #070809 100%); color:var(--text); line-height:1.65; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; } img { max-width:100%; display:block; }
+    .page { min-height:100vh; background:linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px); background-size:72px 72px; }
+    .container { width:min(var(--max), calc(100% - 48px)); margin:0 auto; }
+    .header { position:sticky; top:0; z-index:50; background:rgba(5,6,7,0.76); backdrop-filter:blur(18px); border-bottom:1px solid rgba(255,255,255,0.08); }
+    .nav { min-height:86px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:14px; min-width:fit-content; }
+    .brand-logo { width:64px; height:64px; border-radius:999px; object-fit:cover; filter:drop-shadow(0 0 14px rgba(242,184,59,0.14)); }
+    .brand-text { line-height:1.05; letter-spacing:0.02em; }
+    .brand-text strong { display:block; font-size:1.35rem; font-weight:850; }
+    .brand-text span { color:var(--gold); font-size:0.84rem; font-weight:850; letter-spacing:0.08em; }
+    .nav-links { display:flex; align-items:center; gap:clamp(16px,2.1vw,28px); color:rgba(255,255,255,0.88); font-size:0.94rem; }
+    .nav-links a:hover, .nav-links a.active { color:var(--gold); }
+    .nav-cta { border:1px solid var(--gold); padding:13px 22px; border-radius:10px; }
+    .menu-btn { display:none; width:46px; height:46px; border:1px solid var(--border); background:rgba(255,255,255,0.04); border-radius:12px; color:var(--text); font-size:1.4rem; }
+    .hero { padding:clamp(64px,10vw,120px) 0 clamp(54px,8vw,88px); border-bottom:1px solid rgba(255,255,255,0.08); }
+    .hero-inner { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,0.9fr); gap:clamp(34px,6vw,76px); align-items:center; }
+    .eyebrow { color:var(--gold); font-weight:850; letter-spacing:0.12em; text-transform:uppercase; font-size:0.78rem; margin-bottom:18px; }
+    h1 { font-size:clamp(2.35rem,5.4vw,4.75rem); line-height:1.06; letter-spacing:-0.04em; margin-bottom:24px; }
+    h2 { font-size:clamp(1.9rem,3vw,3rem); line-height:1.12; letter-spacing:-0.03em; margin-bottom:14px; }
+    .gold { color:var(--gold); text-shadow:0 0 28px rgba(242,184,59,0.12); }
+    .lead { color:rgba(255,255,255,0.80); font-size:clamp(1.04rem,1.7vw,1.24rem); max-width:720px; margin-bottom:30px; }
+    .actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:28px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:58px; padding:17px 26px; border-radius:10px; font-weight:850; transition:transform 180ms ease, box-shadow 180ms ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { background:linear-gradient(135deg,var(--gold-2),var(--gold)); color:#0b0b0b; box-shadow:0 18px 48px rgba(242,184,59,0.22); }
+    .btn-secondary { border:1px solid rgba(242,184,59,0.45); background:rgba(255,255,255,0.035); color:var(--text); }
+    .hero-card, .card, .price-panel, .cta-panel { background:radial-gradient(circle at 15% 0%, rgba(242,184,59,0.10), transparent 36%), linear-gradient(145deg, var(--panel), var(--panel-soft)); border:1px solid var(--border); border-radius:20px; box-shadow:0 18px 60px rgba(0,0,0,0.24); }
+    .hero-card { border-color:rgba(238,174,61,0.45); padding:clamp(28px,4vw,42px); box-shadow:var(--shadow); }
+    .hero-card h2 { font-size:clamp(1.35rem,2vw,1.8rem); }
+    .check-list { list-style:none; display:grid; gap:13px; }
+    .check-list li { display:flex; gap:12px; color:rgba(255,255,255,0.82); }
+    .check-list li::before { content:"✓"; color:var(--gold); font-weight:900; flex:0 0 auto; }
+    .section { padding:clamp(58px,8vw,92px) 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .section-title { max-width:760px; margin-bottom:36px; }
+    .section-title.center { text-align:center; margin-left:auto; margin-right:auto; }
+    .section-title p, .card p, .price-panel p, .cta-panel p { color:var(--muted); }
+    .title-line { width:48px; height:3px; background:linear-gradient(90deg,#b87912,var(--gold-2)); border-radius:999px; margin-top:18px; }
+    .center .title-line { margin-left:auto; margin-right:auto; }
+    .grid-2, .grid-3, .process-grid { display:grid; gap:24px; }
+    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .process-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .card { padding:30px 28px; }
+    .card h3 { font-size:1.22rem; margin-bottom:10px; line-height:1.25; }
+    .card a { color:var(--gold); font-weight:850; }
+    .step-number { width:46px; height:46px; border-radius:999px; background:linear-gradient(135deg,var(--gold-2),var(--gold)); color:#0b0b0b; display:grid; place-items:center; font-weight:900; margin-bottom:18px; }
+    .price-panel { border-color:rgba(238,174,61,0.45); padding:clamp(28px,5vw,46px); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:26px; align-items:center; box-shadow:var(--shadow); }
+    .price { display:block; color:var(--gold); font-size:clamp(2rem,4vw,3.3rem); font-weight:900; white-space:nowrap; }
+    .faq-list { max-width:920px; margin:0 auto; display:grid; gap:14px; }
+    .faq-item { border:1px solid var(--border); border-radius:16px; background:linear-gradient(145deg,var(--panel),var(--panel-soft)); overflow:hidden; }
+    .faq-item summary { list-style:none; cursor:pointer; padding:22px 24px; font-weight:850; display:flex; justify-content:space-between; gap:18px; }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item summary::after { content:"+"; color:var(--gold); font-size:1.5rem; line-height:1; }
+    .faq-item[open] summary::after { content:"-"; }
+    .faq-item p { color:var(--muted); padding:0 24px 22px; }
+    .cta-section { padding:clamp(58px,8vw,96px) 0; }
+    .cta-panel { text-align:center; border-color:rgba(238,174,61,0.45); padding:clamp(34px,6vw,64px); box-shadow:var(--shadow); }
+    .cta-panel p { max-width:680px; margin:0 auto; }
+    .footer { padding:34px 0 42px; border-top:1px solid rgba(255,255,255,0.07); color:rgba(255,255,255,0.78); }
+    .footer-inner { display:flex; justify-content:center; align-items:center; gap:18px 22px; flex-wrap:wrap; }
+    .footer-links { width:100%; display:flex; justify-content:center; gap:16px 24px; flex-wrap:wrap; color:rgba(255,255,255,0.72); font-size:0.94rem; }
+    .footer-links a:hover { color:var(--gold); }
+    .footer-line { width:1px; height:22px; background:rgba(255,255,255,0.22); }
+    .social { display:inline-flex; align-items:center; gap:10px; }
+    .social svg { width:24px; height:24px; }
+    @media (max-width:980px) { .container{width:min(100% - 34px,var(--max));} .nav{min-height:78px; flex-wrap:wrap; padding:12px 0;} .menu-btn{display:grid; place-items:center;} .nav-links{display:none; width:100%; flex-direction:column; align-items:stretch; gap:6px; padding:10px 0 14px;} .nav-links.open{display:flex;} .nav-links a{padding:14px 12px; border-radius:10px; background:rgba(255,255,255,0.035);} .nav-cta{text-align:center;} .hero-inner,.grid-2,.grid-3,.process-grid,.price-panel{grid-template-columns:1fr;} .price{white-space:normal;} }
+    @media (max-width:620px) { .brand-logo{width:52px;height:52px;} .brand-text strong{font-size:1.08rem;} .brand-text span{font-size:0.72rem;} .actions{display:grid; grid-template-columns:1fr;} .btn{width:100%; padding:16px 20px;} .card,.hero-card{padding:26px 22px;} .footer-inner{flex-direction:column; gap:13px;} .footer-line{display:none;} .footer-links{flex-direction:column; align-items:center; gap:10px;} }
+  
+    /* Visual finishing pass: premium cards, light navigation and branded footer. */
+    .nav-links { gap: clamp(18px, 2.4vw, 34px); }
+    .nav-links a { white-space: nowrap; transition: color 180ms ease, border-color 180ms ease, background 180ms ease; }
+    .nav-cta { border-color: rgba(242,184,59,0.62); background: rgba(242,184,59,0.08); }
+    .card, .hero-card, .price-panel, .cta-panel, .direct-contact-card { transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease; will-change: transform; }
+    .card:hover, .hero-card:hover, .price-panel:hover, .cta-panel:hover, .direct-contact-card:hover { transform: translateY(-5px); border-color: rgba(242,184,59,0.46); box-shadow: 0 0 34px rgba(242,184,59,0.12), 0 22px 70px rgba(0,0,0,0.34); }
+    .service-grid { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 28px; align-items: stretch; }
+    .service-card { min-height: 100%; display: flex; flex-direction: column; padding: 36px 30px; }
+    .service-card h3 { font-size: clamp(1.18rem, 1.5vw, 1.34rem); }
+    .service-card p { margin-bottom: 22px; }
+    .service-card .card-cta { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 9px; color: var(--gold); font-weight: 900; }
+    .service-card .card-cta span { transition: transform 180ms ease; }
+    .service-card .card-cta:hover span { transform: translateX(3px); }
+    .card-label { display: inline-flex; align-items: center; align-self: flex-start; margin-bottom: 16px; padding: 6px 10px; border: 1px solid rgba(242,184,59,0.42); border-radius: 999px; color: var(--gold-2); background: rgba(242,184,59,0.08); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; }
+    .card.featured { border-color: rgba(242,184,59,0.58); box-shadow: 0 0 38px rgba(242,184,59,0.10), 0 18px 60px rgba(0,0,0,0.26); }
+    .price { overflow-wrap: anywhere; }
+    .step-number { box-shadow: 0 0 0 5px rgba(242,184,59,0.10), 0 0 28px rgba(242,184,59,0.28); }
+    .footer { padding: clamp(44px, 7vw, 70px) 0 38px; background: radial-gradient(circle at 18% 0%, rgba(242,184,59,0.10), transparent 32%), linear-gradient(180deg, rgba(255,255,255,0.028), rgba(255,255,255,0.006)); }
+    .footer-shell { display: grid; grid-template-columns: minmax(260px, 1.05fr) minmax(280px, 1.35fr); gap: 34px 54px; align-items: start; }
+    .footer-brand { display: flex; align-items: center; gap: 16px; min-width: 0; }
+    .footer-logo { width: 66px; height: 66px; border-radius: 999px; object-fit: cover; filter: drop-shadow(0 0 16px rgba(242,184,59,0.18)); flex: 0 0 auto; }
+    .footer-brand strong { display: block; color: var(--text); font-size: 1.2rem; line-height: 1.1; }
+    .footer-brand p { color: var(--muted); margin-top: 8px; max-width: 420px; }
+    .footer-links { width: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 20px; margin: 0; color: rgba(255,255,255,0.78); }
+    .footer-links a { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 180ms ease, border-color 180ms ease; }
+    .footer-links a:hover { color: var(--gold); border-color: rgba(242,184,59,0.34); }
+    .footer-social { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.78); }
+    .footer-social-label { color: rgba(255,255,255,0.62); }
+    @media (max-width: 980px) { .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } .footer-shell { grid-template-columns: 1fr; text-align: left; } .footer-social { justify-content: flex-start; } }
+    @media (max-width: 620px) { .service-grid { grid-template-columns: 1fr; } .service-card { padding: 28px 22px; } .footer-brand { align-items: flex-start; } .footer-logo { width: 56px; height: 56px; } .footer-links { grid-template-columns: 1fr; } .footer-social { flex-direction: column; align-items: flex-start; gap: 12px; } }
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '26945439295122237');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=26945439295122237&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <div class="page">
+    <header class="header"><div class="container"><nav class="nav"><a class="brand" href="/" aria-label="Aatos Marketing etusivu"><img class="brand-logo" src="/AM_logo.png" alt="Aatos Marketing logo"><div class="brand-text"><strong>AATOS</strong><span>MARKETING</span></div></a><button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button><div class="nav-links" id="navLinks"><a href="/#palvelut">Palvelut</a><a href="/#hinnasto">Hinnasto</a><a class="nav-cta" href="/#yhteys">Yhteys</a></div></nav></div></header>
+
+    <main>
+      <section class="hero"><div class="container hero-inner"><div><p class="eyebrow">Verkkosivut palveluyritykselle</p><h1><span class="gold">Selkeät verkkosivut</span> palveluyritykselle, joka haluaa enemmän yhteydenottoja.</h1><p class="lead">Teen palveluyritykselle yksinkertaisen ja luotettavan sivuston, joka kertoo nopeasti mitä tarjoatte, miksi asiakkaan kannattaa valita teidät ja miten yhteydenotto onnistuu.</p><div class="actions"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="#hinta">Katso hinta <span>→</span></a></div></div><aside class="hero-card"><h2>Kotisivut palveluyritykselle alk. 500 €</h2><ul class="check-list"><li>Selkeä rakenne ja myyvä viesti</li><li>Mobiiliystävällinen staattinen sivu</li><li>Yhteydenottoon ohjaavat CTA:t</li><li>Perus-SEO hakutarkoituksen mukaan</li></ul></aside></div></section>
+
+      <section class="section" id="kenelle"><div class="container"><div class="section-title"><h2>Kenelle palvelu sopii?</h2><p>Palvelu sopii yritykselle, jonka asiakkaat etsivät tietoa, luottamusta ja helppoa tapaa ottaa yhteyttä ennen ostopäätöstä.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Paikallisille palveluyrityksille</h3><p>Esimerkiksi kauneus-, hyvinvointi-, remontti-, siivous-, auto-, terveys- ja B2B-palveluille.</p></article><article class="card"><h3>Yrityksille, joilla viesti on epäselvä</h3><p>Jos asiakas ei heti ymmärrä palvelua, sivusto voi estää yhteydenottoja vaikka itse palvelu olisi hyvä.</p></article><article class="card"><h3>Yrityksille, jotka haluavat matalan kynnyksen aloituksen</h3><p>Yksinkertainen sivu riittää usein alkuun, kun rakenne, teksti ja yhteydenottopolku ovat kunnossa.</p></article></div></div></section>
+
+      <section class="section"><div class="container"><div class="section-title"><h2>Mitä asiakas saa?</h2><p>Tavoitteena ei ole monimutkainen järjestelmä, vaan selkeä sivusto, jota on helppo ylläpitää ja joka tukee yhteydenottoja.</p><div class="title-line"></div></div><div class="grid-2"><article class="card"><h3>Selkeä sivurakenne ja tekstit</h3><ul class="check-list"><li>Ytimekäs pääviesti</li><li>Palvelun hyödyt asiakkaan näkökulmasta</li><li>Luottamusta rakentavat kohdat</li><li>Selkeä yhteydenottopolku</li></ul></article><article class="card"><h3>Tekninen perusta staattisena sivuna</h3><ul class="check-list"><li>Mobiiliresponsiivinen toteutus</li><li>Oma title ja meta description</li><li>Canonical-tagit ja perus-SEO</li><li>Yhteydenottolomake tai selkeä CTA</li></ul></article></div></div></section>
+
+      <section class="section"><div class="container"><div class="section-title"><h2>Miksi selkeä sivusto auttaa saamaan enemmän yhteydenottoja?</h2><p>Palveluyrityksen sivuston tärkein tehtävä on poistaa epävarmuutta. Kun kävijä ymmärtää palvelun, hinnan suunnan ja seuraavan askeleen, yhteydenotto tuntuu helpommalta.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Asiakas ymmärtää nopeasti</h3><p>Selkeä otsikko, palvelukuvaus ja hyödyt kertovat heti, onko palvelu hänelle oikea.</p></article><article class="card"><h3>Luottamus kasvaa</h3><p>Hyvin rakennettu sivu tekee yrityksestä luotettavamman ja vähentää asiakkaan epäröintiä.</p></article><article class="card"><h3>Seuraava askel on helppo</h3><p>Kun CTA ja yhteydenotto ovat näkyvästi esillä, kiinnostunut asiakas ei joudu etsimään miten toimia.</p></article></div></div></section>
+
+      <section class="section"><div class="container"><div class="section-title center"><h2>Prosessi 1-4 vaiheessa</h2><div class="title-line"></div></div><div class="process-grid"><article class="card"><div class="step-number">1</div><h3>Näkyvyysanalyysi</h3><p>Katsotaan nykyinen sivusto, some ja asiakaspolku uuden asiakkaan näkökulmasta.</p></article><article class="card"><div class="step-number">2</div><h3>Rakenne ja viesti</h3><p>Sovitaan sivun tärkein tavoite, sisältö ja yhteydenottoon ohjaavat kohdat.</p></article><article class="card"><div class="step-number">3</div><h3>Toteutus</h3><p>Rakennan sivun yksinkertaisena, mobiiliystävällisenä ja helposti ylläpidettävänä kokonaisuutena.</p></article><article class="card"><div class="step-number">4</div><h3>Julkaisu ja jatko</h3><p>Käydään sivu läpi, tehdään tarvittavat viimeistelyt ja sovitaan mahdollisista jatkotoimista.</p></article></div></div></section>
+
+      <section class="section" id="hinta"><div class="container"><div class="price-panel"><div><p class="eyebrow">Hinta</p><h2>Yksinkertainen verkkosivu palveluyritykselle</h2><p>Hinta riippuu sisällön laajuudesta, mutta aloitus pidetään selkeänä ja matalan kynnyksen kokoisena.</p></div><strong class="price">alk. 500 €</strong></div></div></section>
+
+      <section class="section"><div class="container"><div class="section-title"><h2>Tutustu myös</h2><p>Selkeä sivusto toimii parhaiten, kun sitä tukevat sisältö, video ja tarvittaessa mainonta.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Somepostaukset ja sisältö</h3><p>Säännöllinen sisältö auttaa rakentamaan luottamusta sivuston rinnalla.</p><a href="/some-markkinointi-palveluyrityksille/">Lue lisää →</a></article><article class="card"><h3>Facebook- ja Instagram-mainonta</h3><p>Meta-mainonta voi ohjata oikeat ihmiset selkeälle yhteydenottopolulle.</p><a href="/facebook-instagram-mainonta/">Lue lisää →</a></article><article class="card"><h3>Maksuton näkyvyysanalyysi</h3><p>Hyvä ensimmäinen askel ennen uuden sivuston rakentamista.</p><a href="/maksuton-nakyvyysanalyysi/">Lue lisää →</a></article></div></div></section>
+
+      <section class="section" id="faq"><div class="container"><div class="section-title center"><h2>Usein kysytyt kysymykset</h2><div class="title-line"></div></div><div class="faq-list"><details class="faq-item"><summary>Mitä tarkoittaa verkkosivut palveluyritykselle?</summary><p>Se tarkoittaa sivustoa, joka on rakennettu palvelun myyntiä ja yhteydenottoja varten. Sivun pitää vastata asiakkaan tärkeimpiin kysymyksiin nopeasti.</p></details><details class="faq-item"><summary>Mitä eroa on verkkosivuilla ja kotisivuilla?</summary><p>Käytännössä moni käyttää sanoja verkkosivut ja kotisivut samalla tavalla. Tärkeintä on, että sivusto kertoo palvelun selkeästi ja ohjaa ottamaan yhteyttä.</p></details><details class="faq-item"><summary>Sisältyykö hakukoneoptimointi hintaan?</summary><p>Perus-SEO sisältyy: selkeä title, meta description, otsikkorakenne, canonical ja sisältö hakutarkoituksen mukaan. Laajempi SEO voidaan sopia erikseen.</p></details><details class="faq-item"><summary>Voiko sivuun yhdistää yhteydenottolomakkeen?</summary><p>Kyllä. Sivulle voidaan lisätä selkeä lomake tai muu yhteydenottotapa, jotta kiinnostunut asiakas pääsee helposti eteenpäin.</p></details><details class="faq-item"><summary>Voiko sivustoa laajentaa myöhemmin?</summary><p>Kyllä. Alkuun voidaan tehdä yksinkertainen sivu ja myöhemmin lisätä palvelusivuja, sisältöä tai mainonnan laskeutumissivuja.</p></details></div></div></section>
+
+      <section class="cta-section" id="yhteys"><div class="container"><div class="cta-panel"><p class="eyebrow">Aloitetaan kevyesti</p><h2>Pyydä maksuton näkyvyysanalyysi</h2><p>Katson nykyisen tilanteen ja annan konkreettisia huomioita siitä, miten verkkosivut, some tai asiakaspolku voisi tukea paremmin yhteydenottoja.</p><div class="actions" style="justify-content:center;"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="/">Takaisin etusivulle <span>→</span></a></div></div></div></section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-shell">
+        <div class="footer-brand">
+          <img class="footer-logo" src="/AM_logo.png" alt="Aatos Marketing logo">
+          <div><strong>Aatos Marketing</strong><p>Selkeämpää näkyvyyttä ja enemmän yhteydenottoja palveluyrityksille.</p></div>
+        </div>
+        <nav class="footer-links" aria-label="Palvelulinkit">
+          <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
+          <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
+          <a href="/some-markkinointi-palveluyrityksille/">Somepostaukset ja sisältö</a>
+          <a href="/videoeditointi/">Videoeditointi</a>
+          <a href="/maksuton-nakyvyysanalyysi/">Maksuton näkyvyysanalyysi</a>
+        </nav>
+        <div class="footer-social">
+          <span class="footer-social-label">Seuraa somessa</span>
+          <a class="social" href="https://www.instagram.com/aatosmarketing/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>Instagram</a>
+          <a class="social" href="https://www.facebook.com/profile.php?id=61574307923587&locale=fi_FI" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.24 10.44 22V14.97H7.9V12.06H10.44V9.84C10.44 7.32 11.93 5.93 14.22 5.93C15.32 5.93 16.47 6.13 16.47 6.13V8.61H15.2C13.95 8.61 13.56 9.39 13.56 10.19V12.06H16.35L15.9 14.97H13.56V22C18.34 21.24 22 17.08 22 12.06Z"/></svg>Facebook</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>const menuBtn=document.getElementById("menuBtn");const navLinks=document.getElementById("navLinks");menuBtn.addEventListener("click",()=>{navLinks.classList.toggle("open");menuBtn.textContent=navLinks.classList.contains("open")?"×":"☰";});document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{navLinks.classList.remove("open");menuBtn.textContent="☰";});});</script>
+</body>
+</html>
