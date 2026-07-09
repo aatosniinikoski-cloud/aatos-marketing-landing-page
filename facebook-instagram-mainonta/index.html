@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Facebook- ja Instagram-mainonta palveluyritykselle | Aatos Marketing</title>
-  <meta name="description" content="Facebook- ja Instagram-mainonta palveluyritykselle. Aatos Marketing auttaa Meta-mainonnan aloituksessa ja kuukausihallinnassa selkeillä tavoitteilla." />
+  <meta name="description" content="Facebook- ja Instagram-mainonta palveluyritykselle. Aatos Marketing auttaa testaamaan mainontaa selkeällä kampanjalla, seurannalla ja tulosten läpikäynnillä." />
   <link rel="canonical" href="https://aatosmarketing.fi/facebook-instagram-mainonta/" />
   <link rel="icon" type="image/png" href="/favicon.png?v=2">
   <link rel="shortcut icon" type="image/png" href="/favicon.png?v=2">
@@ -48,7 +48,7 @@
     .actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin-top:28px; }
     .btn { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:58px; padding:17px 26px; border-radius:10px; font-weight:850; transition:transform 180ms ease, box-shadow 180ms ease; }
     .btn:hover { transform:translateY(-2px); }
-    .btn-primary { background:linear-gradient(135deg,var(--gold-2),var(--gold)); color:#0b0b0b; box-shadow:0 18px 48px rgba(242,184,59,0.22); }
+    .btn-primary { background:linear-gradient(135deg,var(--gold-2),var(--gold)); color: #050607; opacity: 1; text-shadow: none; box-shadow:0 18px 48px rgba(242,184,59,0.22); }
     .btn-secondary { border:1px solid rgba(242,184,59,0.45); background:rgba(255,255,255,0.035); color:var(--text); }
     .hero-card, .card, .price-panel, .cta-panel { background:radial-gradient(circle at 15% 0%, rgba(242,184,59,0.10), transparent 36%), linear-gradient(145deg, var(--panel), var(--panel-soft)); border:1px solid var(--border); border-radius:20px; box-shadow:0 18px 60px rgba(0,0,0,0.24); }
     .hero-card { border-color:rgba(238,174,61,0.45); padding:clamp(28px,4vw,42px); box-shadow:var(--shadow); }
@@ -69,7 +69,7 @@
     .card { padding:30px 28px; }
     .card h3 { font-size:1.22rem; margin-bottom:10px; line-height:1.25; }
     .card a { color:var(--gold); font-weight:850; }
-    .step-number { width:46px; height:46px; border-radius:999px; background:linear-gradient(135deg,var(--gold-2),var(--gold)); color:#0b0b0b; display:grid; place-items:center; font-weight:900; margin-bottom:18px; }
+    .step-number { width:46px; height:46px; border-radius:999px; background:linear-gradient(135deg,var(--gold-2),var(--gold)); color: #050607; display:grid; place-items:center; font-weight:900; margin-bottom:18px; }
     .price-panel { border-color:rgba(238,174,61,0.45); padding:clamp(28px,5vw,46px); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:26px; align-items:center; box-shadow:var(--shadow); }
     .price { display:block; color:var(--gold); font-size:clamp(1.8rem,3.2vw,2.8rem); font-weight:900; white-space:nowrap; }
     .faq-list { max-width:920px; margin:0 auto; display:grid; gap:14px; }
@@ -96,6 +96,26 @@
     .nav-links { gap: clamp(18px, 2.4vw, 34px); }
     .nav-links a { white-space: nowrap; transition: color 180ms ease, border-color 180ms ease, background 180ms ease; }
     .nav-cta { border-color: rgba(242,184,59,0.62); background: rgba(242,184,59,0.08); }
+    .nav-service { position: relative; display: flex; align-items: center; }
+    .nav-service-row { display: flex; align-items: center; gap: 6px; }
+    .service-menu-toggle { width: 30px; height: 30px; display: inline-grid; place-items: center; border: 1px solid rgba(242,184,59,0.34); border-radius: 999px; background: rgba(242,184,59,0.08); color: rgba(255,255,255,0.82); cursor: pointer; line-height: 1; transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+    .service-menu-toggle:hover { color: var(--gold); border-color: rgba(242,184,59,0.58); background: rgba(242,184,59,0.12); }
+    .service-menu { position: absolute; top: calc(100% + 18px); left: 50%; width: min(300px, calc(100vw - 36px)); padding: 10px; border: 1px solid rgba(242,184,59,0.28); border-radius: 14px; background: linear-gradient(145deg, rgba(14,15,16,0.98), rgba(8,9,10,0.96)); box-shadow: 0 22px 60px rgba(0,0,0,0.42), 0 0 28px rgba(242,184,59,0.10); opacity: 0; visibility: hidden; pointer-events: none; transform: translate(-50%, 8px); transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease, border-color 180ms ease; z-index: 90; }
+    .service-menu a { display: block; padding: 11px 13px; border-radius: 10px; color: rgba(255,255,255,0.78); white-space: normal; line-height: 1.25; transition: color 180ms ease, background 180ms ease, transform 180ms ease; }
+    .service-menu a:hover { color: var(--gold); background: rgba(242,184,59,0.08); transform: translateX(2px); }
+    .nav-service:hover .service-menu,
+    .nav-service:focus-within .service-menu,
+    .nav-service.open .service-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
+    .nav-service.open .service-menu-toggle { color: var(--gold); border-color: rgba(242,184,59,0.58); transform: rotate(180deg); }
+    @media (max-width: 980px) {
+      .nav-service { display: block; border-radius: 10px; background: rgba(255,255,255,0.035); }
+      .nav-service-row { align-items: center; }
+      .nav-service-row > a { flex: 1; background: transparent; }
+      .service-menu-toggle { width: 42px; height: 42px; margin-right: 6px; }
+      .service-menu { position: static; display: none; width: auto; padding: 8px; margin: 0 8px 8px; opacity: 1; visibility: visible; pointer-events: auto; transform: none; box-shadow: none; border-color: rgba(242,184,59,0.20); background: rgba(0,0,0,0.18); }
+      .nav-service.open .service-menu { display: grid; gap: 4px; transform: none; }
+      .service-menu a { padding: 12px; background: rgba(255,255,255,0.028); }
+    }
     .card, .hero-card, .price-panel, .cta-panel, .direct-contact-card { transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease; will-change: transform; }
     .card:hover, .hero-card:hover, .price-panel:hover, .cta-panel:hover, .direct-contact-card:hover { transform: translateY(-5px); border-color: rgba(242,184,59,0.46); box-shadow: 0 0 34px rgba(242,184,59,0.12), 0 22px 70px rgba(0,0,0,0.34); }
     .service-grid { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 28px; align-items: stretch; }
@@ -119,9 +139,52 @@
     .footer-links a { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 180ms ease, border-color 180ms ease; }
     .footer-links a:hover { color: var(--gold); border-color: rgba(242,184,59,0.34); }
     .footer-social { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.78); }
-    .footer-social-label { color: rgba(255,255,255,0.62); }
+    .footer-social-label { color: rgba(255,255,255,0.62); font-size: 0.98rem; line-height: 1.2; }
+    .footer-social .social,
+    .social {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1rem;
+      line-height: 1.2;
+      color: rgba(255,255,255,0.78);
+      transition: color 180ms ease, transform 180ms ease;
+    }
+    .footer-social .social svg,
+    .social svg {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+    }
+    .footer-social .social:hover,
+    .social:hover {
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
     @media (max-width: 980px) { .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } .footer-shell { grid-template-columns: 1fr; text-align: left; } .footer-social { justify-content: flex-start; } }
     @media (max-width: 620px) { .service-grid { grid-template-columns: 1fr; } .service-card { padding: 28px 22px; } .footer-brand { align-items: flex-start; } .footer-logo { width: 56px; height: 56px; } .footer-links { grid-template-columns: 1fr; } .footer-social { flex-direction: column; align-items: flex-start; gap: 12px; } }
+  
+    .btn-primary,
+    .btn-primary:visited,
+    .btn-primary:hover,
+    .btn-primary:focus-visible,
+    .btn-primary:active,
+    .btn-primary span,
+    .btn-primary svg,
+    .btn-primary .icon,
+    .btn-primary::before,
+    .btn-primary::after {
+      color: #050607 !important;
+      opacity: 1;
+      text-shadow: none;
+    }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 620ms ease, transform 620ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .card, .hero-card, .price-panel, .cta-panel, .direct-contact-card, .reveal { transition: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 
   <!-- Meta Pixel Code -->
@@ -142,26 +205,38 @@
 </head>
 <body>
   <div class="page">
-    <header class="header"><div class="container"><nav class="nav"><a class="brand" href="/" aria-label="Aatos Marketing etusivu"><img class="brand-logo" src="/AM_logo.png" alt="Aatos Marketing logo"><div class="brand-text"><strong>AATOS</strong><span>MARKETING</span></div></a><button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button><div class="nav-links" id="navLinks"><a href="/#palvelut">Palvelut</a><a href="/#hinnasto">Hinnasto</a><a class="nav-cta" href="/#yhteys">Yhteys</a></div></nav></div></header>
+    <header class="header"><div class="container"><nav class="nav"><a class="brand" href="/" aria-label="Aatos Marketing etusivu"><img class="brand-logo" src="/AM_logo.png" alt="Aatos Marketing logo"><div class="brand-text"><strong>AATOS</strong><span>MARKETING</span></div></a><button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button><div class="nav-links" id="navLinks"><a href="/">Etusivu</a><div class="nav-service">
+  <div class="nav-service-row">
+    <a href="/#palvelut">Palvelut</a>
+    <button class="service-menu-toggle" type="button" aria-label="Avaa palveluvalikko" aria-expanded="false">⌄</button>
+  </div>
+  <div class="service-menu" aria-label="Palvelut">
+    <a href="/maksuton-nakyvyysanalyysi/">Maksuton näkyvyysanalyysi</a>
+    <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
+    <a href="/some-markkinointi-palveluyrityksille/">Sisällöt someen</a>
+    <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
+    <a href="/videoeditointi/">Lyhytvideoiden editointi</a>
+  </div>
+</div><a href="/#hinnasto">Hinnasto</a><a class="nav-cta" href="/#yhteys">Yhteys</a></div></nav></div></header>
 
     <main>
-      <section class="hero"><div class="container hero-inner"><div><p class="eyebrow">Facebook- ja Instagram-mainonta</p><h1><span class="gold">Meta-mainonta</span> palveluyritykselle, joka haluaa lisää yhteydenottoja.</h1><p class="lead">Autan rakentamaan selkeän Facebook- ja Instagram-mainonnan kokonaisuuden, jossa tavoite, viesti, kohderyhmä ja jatkopolku tukevat yhteydenottoja.</p><div class="actions"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="#hinta">Katso hinnat <span>→</span></a></div></div><aside class="hero-card"><h2>Meta-mainonnan aloitus alk. 300 €</h2><ul class="check-list"><li>Kampanjarakenne ja tavoite</li><li>Facebook- ja Instagram-mainonta</li><li>Kuukausihallinta alk. 250 €/kk</li><li>Mainosbudjetti maksetaan erikseen mainosalustalle</li></ul></aside></div></section>
+      <section class="hero"><div class="container hero-inner"><div><p class="eyebrow">Facebook- ja Instagram-mainonta</p><h1><span class="gold">Facebook- ja Instagram-mainonta</span> palveluyritykselle</h1><p class="lead">Autan rakentamaan selkeän Facebook- ja Instagram-mainonnan kokonaisuuden, jossa tavoite, viesti, kohderyhmä ja jatkopolku tukevat yhteydenottoja.</p><div class="actions"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="#hinta">Katso hinnat <span>→</span></a></div></div><aside class="hero-card"><h2>Facebook- ja Instagram-mainonnan testijakso alk. 300 €</h2><ul class="check-list"><li>Kampanjarakenne ja tavoite</li><li>Ensimmäinen Facebook- ja Instagram-kampanja</li><li>Seuranta ja tulosten läpikäynti</li><li>Mainosbudjetti maksetaan erikseen mainosalustalle</li></ul></aside></div></section>
 
-      <section class="section"><div class="container"><div class="section-title"><h2>Kenelle palvelu sopii?</h2><p>Palvelu sopii palveluyritykselle, joka haluaa tavoittaa oikeita ihmisiä paikallisesti tai tietyn kohderyhmän sisällä.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Paikallisille palveluille</h3><p>Kun palvelu ostetaan yhteydenoton, varauksen tai tarjouspyynnön kautta, mainonnan pitää tehdä seuraava askel helpoksi.</p></article><article class="card"><h3>Yrityksille, joilla on selkeä tarjous</h3><p>Mainonta toimii parhaiten, kun palvelu, hyöty ja yhteydenottopolku ovat riittävän selkeät.</p></article><article class="card"><h3>Kasvua hakeville yrityksille</h3><p>Meta-mainonta voi tuoda näkyvyyttä nopeammin kuin pelkkä orgaaninen sisältö, kun kokonaisuus on rakennettu järkevästi.</p></article></div></div></section>
+      <section class="section"><div class="container"><div class="section-title"><h2>Kenelle palvelu sopii?</h2><p>Palvelu sopii palveluyritykselle, joka haluaa tavoittaa oikeita ihmisiä paikallisesti tai tietyn kohderyhmän sisällä.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Paikallisille palveluille</h3><p>Kun palvelu ostetaan yhteydenoton, varauksen tai tarjouspyynnön kautta, mainonnan pitää tehdä seuraava askel helpoksi.</p></article><article class="card"><h3>Yrityksille, joilla on selkeä tarjous</h3><p>Mainonta toimii parhaiten, kun palvelu, hyöty ja yhteydenottopolku ovat riittävän selkeät.</p></article><article class="card"><h3>Kasvua hakeville yrityksille</h3><p>Facebook- ja Instagram-mainonta voi tuoda näkyvyyttä nopeammin kuin pelkkä orgaaninen sisältö, kun kokonaisuus on rakennettu järkevästi.</p></article></div></div></section>
 
-      <section class="section"><div class="container"><div class="section-title"><h2>Mitä asiakas saa?</h2><p>Tavoitteena on mainonta, jossa jokainen osa tukee yhteydenottoa eikä kampanja jää vain näkyvyyden ostamiseksi.</p><div class="title-line"></div></div><div class="grid-2"><article class="card"><h3>Aloitus ja kampanjarakenne</h3><ul class="check-list"><li>Tavoitteen ja kohderyhmän määrittely</li><li>Mainosviestin ja kulman selkeytys</li><li>Kampanjan perusasetukset</li><li>Yhteydenottopolun tarkistus</li></ul></article><article class="card"><h3>Kuukausihallinta</h3><ul class="check-list"><li>Tulosten seuranta</li><li>Mainosten kevyt optimointi</li><li>Selkeä jatkokehitys</li><li>Raportointi sovitulla tasolla</li></ul></article></div></div></section>
+      <section class="section"><div class="container"><div class="section-title"><h2>Mitä saat?</h2><p>Tavoitteena on mainonta, jossa jokainen osa tukee yhteydenottoa eikä kampanja jää vain näkyvyyden ostamiseksi.</p><div class="title-line"></div></div><div class="grid-2"><article class="card"><h3>Aloitus ja kampanjarakenne</h3><ul class="check-list"><li>Tavoitteen ja kohderyhmän määrittely</li><li>Mainosviestin ja kulman selkeytys</li><li>Kampanjan perusasetukset</li><li>Yhteydenottopolun tarkistus</li></ul></article><article class="card"><h3>Testijakson seuranta</h3><ul class="check-list"><li>Tulosten seuranta</li><li>Mainosten kevyt optimointi</li><li>Tulosten läpikäynti sovitun jakson aikana</li><li>Selkeä suositus mahdollisesta jatkosta</li></ul></article></div></div></section>
 
-      <section class="section"><div class="container"><div class="section-title"><h2>Miksi Meta-mainonta voi tuoda lisää yhteydenottoja?</h2><p>Facebook- ja Instagram-mainonta auttaa viemään selkeän palveluviestin oikeiden ihmisten eteen. Kun mainos ja laskeutumissivu vastaavat asiakkaan tarpeeseen, yhteydenoton kynnys madaltuu.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Oikeampi kohderyhmä</h3><p>Mainontaa voidaan suunnata ihmisille, joille palvelu on todennäköisesti ajankohtainen.</p></article><article class="card"><h3>Selkeä viesti toistuu</h3><p>Asiakas näkee yrityksen ja tarjonnan useammin, mikä auttaa luottamuksen rakentamisessa.</p></article><article class="card"><h3>Yhteydenotto ohjataan suoraan</h3><p>Mainos ohjaa sivulle tai lomakkeeseen, jossa seuraava askel on näkyvä ja helppo.</p></article></div></div></section>
+      <section class="section"><div class="container"><div class="section-title"><h2>Miksi Facebook- ja Instagram-mainonta voi tuoda lisää yhteydenottoja?</h2><p>Facebook- ja Instagram-mainonta auttaa viemään selkeän palveluviestin oikeiden ihmisten eteen. Kun mainos ja laskeutumissivu vastaavat asiakkaan tarpeeseen, yhteydenoton kynnys madaltuu.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Oikeampi kohderyhmä</h3><p>Mainontaa voidaan suunnata ihmisille, joille palvelu on todennäköisesti ajankohtainen.</p></article><article class="card"><h3>Selkeä viesti toistuu</h3><p>Asiakas näkee yrityksen ja tarjonnan useammin, mikä auttaa luottamuksen rakentamisessa.</p></article><article class="card"><h3>Yhteydenotto ohjataan suoraan</h3><p>Mainos ohjaa sivulle tai lomakkeeseen, jossa seuraava askel on näkyvä ja helppo.</p></article></div></div></section>
 
       <section class="section"><div class="container"><div class="section-title center"><h2>Prosessi 1-4 vaiheessa</h2><div class="title-line"></div></div><div class="process-grid"><article class="card"><div class="step-number">1</div><h3>Lähtötilanne</h3><p>Katsotaan palvelu, nykyinen sivu, some ja tavoite.</p></article><article class="card"><div class="step-number">2</div><h3>Mainoskulma</h3><p>Valitaan kohderyhmä, viesti ja yhteydenottoon ohjaava polku.</p></article><article class="card"><div class="step-number">3</div><h3>Kampanjan aloitus</h3><p>Rakennan perusrakenteen ja käynnistän sovitun kokonaisuuden.</p></article><article class="card"><div class="step-number">4</div><h3>Seuranta</h3><p>Katsotaan tuloksia ja kehitetään kampanjaa sovitun hallinnan mukaan.</p></article></div></div></section>
 
-      <section class="section" id="hinta"><div class="container"><div class="price-panel"><div><p class="eyebrow">Hinta</p><h2>Meta-mainonnan aloitus ja hallinta</h2><p>Meta-mainonnan aloitus alk. 300 €. Kuukausihallinta alk. 250 €/kk. Mainosbudjetti ei sisälly palvelumaksuun, vaan se veloitetaan erikseen suoraan mainosalustalta.</p></div><strong class="price">alk. 300 €</strong></div></div></section>
+      <section class="section" id="hinta"><div class="container"><div class="price-panel"><div><p class="eyebrow">Hinta</p><h2>Facebook- ja Instagram-mainonnan testijakso</h2><p>Testijakso sisältää ensimmäisen kampanjan suunnittelun, rakenteen, käynnistyksen, seurannan ja tulosten läpikäynnin sovitun jakson aikana.</p><p>Jos testijakso näyttää lupaavalta, jatkuva hallinta tai tulospohjainen malli voidaan sopia erikseen. Tulospohjainen malli voidaan sopia erikseen, jos tulokset voidaan mitata luotettavasti.</p><p>Mainosbudjetti maksetaan erikseen suoraan mainosalustalle.</p></div><strong class="price">alk. 300 €</strong></div></div></section>
 
-      <section class="section"><div class="container"><div class="section-title"><h2>Tutustu myös</h2><p>Mainonta toimii parhaiten, kun sivusto ja sisältö tukevat samaa viestiä.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Verkkosivut</h3><p>Selkeä sivu tukee mainonnan tuloksia.</p><a href="/verkkosivut-palveluyritykselle/">Lue lisää →</a></article><article class="card"><h3>Somepostaukset</h3><p>Säännöllinen sisältö vahvistaa luottamusta mainonnan rinnalla.</p><a href="/some-markkinointi-palveluyrityksille/">Lue lisää →</a></article><article class="card"><h3>Maksuton näkyvyysanalyysi</h3><p>Hyvä ensimmäinen askel ennen mainonnan aloittamista.</p><a href="/maksuton-nakyvyysanalyysi/">Lue lisää →</a></article></div></div></section>
+<section class="section"><div class="container"><div class="section-title"><h2>Tutustu myös</h2><p>Mainonta toimii parhaiten, kun sivusto ja sisältö tukevat samaa viestiä.</p><div class="title-line"></div></div><div class="grid-3"><article class="card"><h3>Verkkosivut</h3><p>Selkeä sivu tukee mainonnan tuloksia.</p><a href="/verkkosivut-palveluyritykselle/">Lue lisää →</a></article><article class="card"><h3>Sisällöt someen</h3><p>Säännöllinen sisältö vahvistaa luottamusta mainonnan rinnalla.</p><a href="/some-markkinointi-palveluyrityksille/">Lue lisää →</a></article><article class="card"><h3>Maksuton näkyvyysanalyysi</h3><p>Hyvä ensimmäinen askel ennen mainonnan aloittamista.</p><a href="/maksuton-nakyvyysanalyysi/">Lue lisää →</a></article></div></div></section>
 
-      <section class="section" id="faq"><div class="container"><div class="section-title center"><h2>Usein kysytyt kysymykset</h2><div class="title-line"></div></div><div class="faq-list"><details class="faq-item"><summary>Mitä Meta-mainonta tarkoittaa?</summary><p>Meta-mainonta tarkoittaa Facebookin ja Instagramin mainontaa. Sitä voidaan käyttää esimerkiksi yhteydenottojen, varausten tai näkyvyyden kasvattamiseen.</p></details><details class="faq-item"><summary>Sisältyykö mainosbudjetti hintaan?</summary><p>Ei. Mainosbudjetti maksetaan erikseen suoraan mainosalustalle. Palvelumaksu kattaa työn, asetukset ja sovitun hallinnan.</p></details><details class="faq-item"><summary>Tarvitaanko verkkosivut ennen mainontaa?</summary><p>Usein kyllä, tai vähintään selkeä yhteydenottopolku. Siksi tarkistan myös sivun ja lomakkeen ennen kampanjan rakentamista.</p></details><details class="faq-item"><summary>Kuinka nopeasti mainonta voidaan aloittaa?</summary><p>Kun tavoite, materiaali ja tarvittavat käyttöoikeudet ovat kunnossa, aloitus onnistuu yleensä kevyellä aikataululla.</p></details></div></div></section>
+      <section class="section" id="faq"><div class="container"><div class="section-title center"><h2>Usein kysytyt</h2><div class="title-line"></div></div><div class="faq-list"><details class="faq-item"><summary>Milloin Facebook- ja Instagram-mainonta kannattaa aloittaa?</summary><p>Mainonta kannattaa aloittaa, kun sivusto tai yhteydenottopolku on tarpeeksi selkeä. Jos asiakas ei ymmärrä palvelua tai tiedä miten ottaa yhteyttä, mainonta ohjaa vain lisää ihmisiä keskeneräiseen polkuun.</p></details><details class="faq-item"><summary>Paljonko mainosbudjettia tarvitaan?</summary><p>Pienessä testissä voidaan usein aloittaa maltillisella päiväbudjetilla. Sopiva budjetti riippuu palvelusta, alueesta ja tavoitteesta. Mainosbudjetti maksetaan erikseen suoraan mainosalustalle.</p></details><details class="faq-item"><summary>Mitä mainonnan testijakso sisältää?</summary><p>Testijaksoon kuuluu kampanjan suunnittelu, perusrakenne, käynnistys, seuranta ja tulosten läpikäynti sovitun jakson aikana.</p></details><details class="faq-item"><summary>Mitä tapahtuu testijakson jälkeen?</summary><p>Jos testijakso näyttää lupaavalta, jatkuva hallinta tai tulospohjainen malli voidaan sopia erikseen. Tulospohjainen malli sopii vain tilanteisiin, joissa tulokset voidaan mitata luotettavasti.</p></details><details class="faq-item"><summary>Miten mainonnan tuloksia seurataan?</summary><p>Tuloksia seurataan esimerkiksi klikkien, yhteydenottojen, lomakelähetysten ja kampanjan kustannusten kautta. Seuranta riippuu siitä, mitä sivustolle ja mainostilille voidaan teknisesti mitata.</p></details></div></div></section>
 
-      <section class="cta-section"><div class="container"><div class="cta-panel"><p class="eyebrow">Aloitetaan tilanteen tarkistuksella</p><h2>Pyydä maksuton näkyvyysanalyysi</h2><p>Katson, onko sivusto, some ja yhteydenottopolku valmiina tukemaan Meta-mainontaa.</p><div class="actions" style="justify-content:center;"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="/">Takaisin etusivulle <span>→</span></a></div></div></div></section>
+      <section class="cta-section"><div class="container"><div class="cta-panel"><p class="eyebrow">Aloitetaan tilanteen tarkistuksella</p><h2>Pyydä maksuton näkyvyysanalyysi</h2><p>Katson, onko sivusto, some ja yhteydenottopolku valmiina tukemaan Facebook- ja Instagram-mainontaa.</p><div class="actions" style="justify-content:center;"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="/">Takaisin etusivulle <span>→</span></a></div></div></div></section>
     </main>
 
     <footer class="footer">
@@ -171,11 +246,11 @@
           <div><strong>Aatos Marketing</strong><p>Selkeämpää näkyvyyttä ja enemmän yhteydenottoja palveluyrityksille.</p></div>
         </div>
         <nav class="footer-links" aria-label="Palvelulinkit">
-          <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
-          <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
-          <a href="/some-markkinointi-palveluyrityksille/">Somepostaukset ja sisältö</a>
-          <a href="/videoeditointi/">Videoeditointi</a>
           <a href="/maksuton-nakyvyysanalyysi/">Maksuton näkyvyysanalyysi</a>
+          <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
+          <a href="/some-markkinointi-palveluyrityksille/">Sisällöt someen</a>
+          <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
+          <a href="/videoeditointi/">Lyhytvideoiden editointi</a>
         </nav>
         <div class="footer-social">
           <span class="footer-social-label">Seuraa somessa</span>
@@ -185,6 +260,43 @@
       </div>
     </footer>
   </div>
-  <script>const menuBtn=document.getElementById("menuBtn");const navLinks=document.getElementById("navLinks");menuBtn.addEventListener("click",()=>{navLinks.classList.toggle("open");menuBtn.textContent=navLinks.classList.contains("open")?"×":"☰";});document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{navLinks.classList.remove("open");menuBtn.textContent="☰";});});</script>
+  <script>const menuBtn=document.getElementById("menuBtn");const navLinks=document.getElementById("navLinks");menuBtn.addEventListener("click",()=>{navLinks.classList.toggle("open");menuBtn.textContent=navLinks.classList.contains("open")?"×":"☰";});    const serviceDropdown = document.querySelector(".nav-service");
+    const serviceToggle = document.querySelector(".service-menu-toggle");
+    if (serviceDropdown && serviceToggle) {
+      serviceToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const isOpen = serviceDropdown.classList.toggle("open");
+        serviceToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.addEventListener("click", (event) => {
+        if (!serviceDropdown.contains(event.target)) {
+          serviceDropdown.classList.remove("open");
+          serviceToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{navLinks.classList.remove("open");menuBtn.textContent="☰";if(serviceDropdown&&serviceToggle){serviceDropdown.classList.remove("open");serviceToggle.setAttribute("aria-expanded","false");}});});
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealTargets = document.querySelectorAll(".hero, .section, .service-start, .service-card, .card, .price-panel, .contact-panel, .cta-panel, .footer");
+    revealTargets.forEach((el) => el.classList.add("reveal"));
+    if (reduceMotion) {
+      revealTargets.forEach((el) => el.classList.add("is-visible"));
+    } else {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      revealTargets.forEach((el) => revealObserver.observe(el));
+    }
+  </script>
 </body>
 </html>
+
+
+
+
+

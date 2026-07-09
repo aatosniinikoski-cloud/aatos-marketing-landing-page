@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aatos Marketing | Lisää yhteydenottoja palveluyrityksille</title>
-  <meta name="description" content="Aatos Marketing auttaa paikallisia palveluyrityksiä saamaan enemmän yhteydenottoja verkkosivujen, somesisältöjen, videoiden ja Meta-mainonnan avulla." />
+  <title>Aatos Marketing | Verkkosivut, sisällöt ja mainonta palveluyrityksille</title>
+  <meta name="description" content="Aatos Marketing auttaa palveluyrityksiä muuttamaan verkkonäkyvyyden selkeämmäksi myyntikanavaksi verkkosivujen, sisältöjen ja Facebook- sekä Instagram-mainonnan avulla." />
   <link rel="canonical" href="https://aatosmarketing.fi/" />
   <link rel="icon" type="image/png" href="/favicon.png?v=2">
   <link rel="shortcut icon" type="image/png" href="/favicon.png?v=2">
@@ -107,7 +107,7 @@
     .hero-actions, .pricing-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 58px; padding: 17px 26px; border-radius: 10px; font-weight: 850; transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease; }
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #0b0b0b; box-shadow: 0 18px 48px rgba(242,184,59,0.22); }
+    .btn-primary { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #050607; opacity: 1; text-shadow: none; box-shadow: 0 18px 48px rgba(242,184,59,0.22); }
     .btn-secondary { border: 1px solid rgba(242,184,59,0.45); background: rgba(255,255,255,0.035); color: var(--text); }
     .hero-note { margin-top: 22px; color: rgba(255,255,255,0.76); font-size: 0.93rem; }
     .hero-visual { min-height: 650px; position: relative; display: flex; align-items: flex-end; justify-content: center; isolation: isolate; }
@@ -133,7 +133,7 @@
     .pricing-note { max-width: 820px; margin: 32px auto 0; text-align: center; color: var(--muted); }
     .pricing-note strong { color: var(--gold-2); }
     .pricing-cta { justify-content: center; margin-top: 26px; }
-    .step-number { width: 52px; height: 52px; border-radius: 999px; background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #0b0b0b; display: grid; place-items: center; font-weight: 900; margin-bottom: 18px; }
+    .step-number { width: 52px; height: 52px; border-radius: 999px; background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #050607; display: grid; place-items: center; font-weight: 900; margin-bottom: 18px; }
 
     .contact-panel { display: grid; grid-template-columns: 0.95fr 1.25fr; gap: 54px; background: radial-gradient(circle at 0% 100%, rgba(242,184,59,0.12), transparent 28%), linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025)); border: 1px solid rgba(238,174,61,0.45); border-radius: 22px; padding: clamp(28px, 5vw, 48px); box-shadow: var(--shadow); }
     .contact-copy h2 { font-size: clamp(2rem, 3.1vw, 3.1rem); line-height: 1.08; letter-spacing: -0.035em; margin-bottom: 16px; }
@@ -151,7 +151,7 @@
     input:focus, select:focus { border-color: rgba(242,184,59,0.72); box-shadow: 0 0 0 4px rgba(242,184,59,0.10); }
     .form .btn { width: 100%; border: 0; cursor: pointer; }
     .privacy { display: flex; gap: 12px; color: rgba(255,255,255,0.68); font-size: 0.93rem; margin-top: 8px; }
-    .privacy::before { content: "✓"; color: var(--gold); font-weight: 900; }
+    .privacy-lock { width: 18px; height: 18px; flex: 0 0 auto; color: var(--gold); filter: drop-shadow(0 0 10px rgba(242,184,59,0.18)); margin-top: 2px; }
     .direct-contact { padding: 0 0 clamp(48px, 7vw, 78px); margin-top: -28px; }
     .direct-contact-card { max-width: 760px; margin: 0 auto; text-align: center; border: 1px solid rgba(242,184,59,0.34); background: linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)); border-radius: 18px; padding: 28px 24px; }
     .direct-contact-card p { color: var(--muted); margin: 10px 0 16px; }
@@ -209,6 +209,26 @@
     .nav-links { gap: clamp(18px, 2.4vw, 34px); }
     .nav-links a { white-space: nowrap; transition: color 180ms ease, border-color 180ms ease, background 180ms ease; }
     .nav-cta { border-color: rgba(242,184,59,0.62); background: rgba(242,184,59,0.08); }
+    .nav-service { position: relative; display: flex; align-items: center; }
+    .nav-service-row { display: flex; align-items: center; gap: 6px; }
+    .service-menu-toggle { width: 30px; height: 30px; display: inline-grid; place-items: center; border: 1px solid rgba(242,184,59,0.34); border-radius: 999px; background: rgba(242,184,59,0.08); color: rgba(255,255,255,0.82); cursor: pointer; line-height: 1; transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+    .service-menu-toggle:hover { color: var(--gold); border-color: rgba(242,184,59,0.58); background: rgba(242,184,59,0.12); }
+    .service-menu { position: absolute; top: calc(100% + 18px); left: 50%; width: min(300px, calc(100vw - 36px)); padding: 10px; border: 1px solid rgba(242,184,59,0.28); border-radius: 14px; background: linear-gradient(145deg, rgba(14,15,16,0.98), rgba(8,9,10,0.96)); box-shadow: 0 22px 60px rgba(0,0,0,0.42), 0 0 28px rgba(242,184,59,0.10); opacity: 0; visibility: hidden; pointer-events: none; transform: translate(-50%, 8px); transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease, border-color 180ms ease; z-index: 90; }
+    .service-menu a { display: block; padding: 11px 13px; border-radius: 10px; color: rgba(255,255,255,0.78); white-space: normal; line-height: 1.25; transition: color 180ms ease, background 180ms ease, transform 180ms ease; }
+    .service-menu a:hover { color: var(--gold); background: rgba(242,184,59,0.08); transform: translateX(2px); }
+    .nav-service:hover .service-menu,
+    .nav-service:focus-within .service-menu,
+    .nav-service.open .service-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
+    .nav-service.open .service-menu-toggle { color: var(--gold); border-color: rgba(242,184,59,0.58); transform: rotate(180deg); }
+    @media (max-width: 980px) {
+      .nav-service { display: block; border-radius: 10px; background: rgba(255,255,255,0.035); }
+      .nav-service-row { align-items: center; }
+      .nav-service-row > a { flex: 1; background: transparent; }
+      .service-menu-toggle { width: 42px; height: 42px; margin-right: 6px; }
+      .service-menu { position: static; display: none; width: auto; padding: 8px; margin: 0 8px 8px; opacity: 1; visibility: visible; pointer-events: auto; transform: none; box-shadow: none; border-color: rgba(242,184,59,0.20); background: rgba(0,0,0,0.18); }
+      .nav-service.open .service-menu { display: grid; gap: 4px; transform: none; }
+      .service-menu a { padding: 12px; background: rgba(255,255,255,0.028); }
+    }
     .card, .hero-card, .price-panel, .cta-panel, .direct-contact-card { transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease; will-change: transform; }
     .card:hover, .hero-card:hover, .price-panel:hover, .cta-panel:hover, .direct-contact-card:hover { transform: translateY(-5px); border-color: rgba(242,184,59,0.46); box-shadow: 0 0 34px rgba(242,184,59,0.12), 0 22px 70px rgba(0,0,0,0.34); }
     .service-grid { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 28px; align-items: stretch; }
@@ -218,6 +238,13 @@
     .service-card .card-cta { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 9px; color: var(--gold); font-weight: 900; }
     .service-card .card-cta span { transition: transform 180ms ease; }
     .service-card .card-cta:hover span { transform: translateX(3px); }
+    .service-path { display: grid; gap: 28px; }
+    .service-start { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; padding: clamp(30px, 5vw, 46px); border-color: rgba(242,184,59,0.56); box-shadow: 0 0 42px rgba(242,184,59,0.10), 0 22px 70px rgba(0,0,0,0.30); }
+    .service-start h3 { font-size: clamp(1.65rem, 2.6vw, 2.3rem); margin-bottom: 14px; }
+    .service-start p { max-width: 760px; }
+    .service-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .service-more { color: var(--gold); font-weight: 850; }
+    .service-main-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: stretch; }
     .card-label { display: inline-flex; align-items: center; align-self: flex-start; margin-bottom: 16px; padding: 6px 10px; border: 1px solid rgba(242,184,59,0.42); border-radius: 999px; color: var(--gold-2); background: rgba(242,184,59,0.08); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; }
     .card.featured { border-color: rgba(242,184,59,0.58); box-shadow: 0 0 38px rgba(242,184,59,0.10), 0 18px 60px rgba(0,0,0,0.26); }
     .price { overflow-wrap: anywhere; }
@@ -232,9 +259,52 @@
     .footer-links a { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 180ms ease, border-color 180ms ease; }
     .footer-links a:hover { color: var(--gold); border-color: rgba(242,184,59,0.34); }
     .footer-social { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.78); }
-    .footer-social-label { color: rgba(255,255,255,0.62); }
-    @media (max-width: 980px) { .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } .footer-shell { grid-template-columns: 1fr; text-align: left; } .footer-social { justify-content: flex-start; } }
-    @media (max-width: 620px) { .service-grid { grid-template-columns: 1fr; } .service-card { padding: 28px 22px; } .footer-brand { align-items: flex-start; } .footer-logo { width: 56px; height: 56px; } .footer-links { grid-template-columns: 1fr; } .footer-social { flex-direction: column; align-items: flex-start; gap: 12px; } }
+    .footer-social-label { color: rgba(255,255,255,0.62); font-size: 0.98rem; line-height: 1.2; }
+    .footer-social .social,
+    .social {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1rem;
+      line-height: 1.2;
+      color: rgba(255,255,255,0.78);
+      transition: color 180ms ease, transform 180ms ease;
+    }
+    .footer-social .social svg,
+    .social svg {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+    }
+    .footer-social .social:hover,
+    .social:hover {
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
+    @media (max-width: 980px) { .service-grid, .service-main-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } .service-start { grid-template-columns: 1fr; } .footer-shell { grid-template-columns: 1fr; text-align: left; } .footer-social { justify-content: flex-start; } }
+    @media (max-width: 620px) { .service-grid, .service-main-grid { grid-template-columns: 1fr; } .service-card { padding: 28px 22px; } .service-actions { align-items: stretch; } .service-actions .btn { width: 100%; justify-content: center; } .footer-brand { align-items: flex-start; } .footer-logo { width: 56px; height: 56px; } .footer-links { grid-template-columns: 1fr; } .footer-social { flex-direction: column; align-items: flex-start; gap: 12px; } }
+  
+    .btn-primary,
+    .btn-primary:visited,
+    .btn-primary:hover,
+    .btn-primary:focus-visible,
+    .btn-primary:active,
+    .btn-primary span,
+    .btn-primary svg,
+    .btn-primary .icon,
+    .btn-primary::before,
+    .btn-primary::after {
+      color: #050607 !important;
+      opacity: 1;
+      text-shadow: none;
+    }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 620ms ease, transform 620ms ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .card, .hero-card, .price-panel, .cta-panel, .direct-contact-card, .reveal { transition: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 
   <!-- Meta Pixel Code -->
@@ -264,7 +334,19 @@
           </a>
           <button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button>
           <div class="nav-links" id="navLinks">
-            <a class="active" href="#palvelut">Palvelut</a><a href="#hinnasto">Hinnasto</a><a class="nav-cta" href="#yhteys">Yhteys</a>
+            <a class="active" href="/">Etusivu</a><div class="nav-service">
+  <div class="nav-service-row">
+    <a href="#palvelut">Palvelut</a>
+    <button class="service-menu-toggle" type="button" aria-label="Avaa palveluvalikko" aria-expanded="false">⌄</button>
+  </div>
+  <div class="service-menu" aria-label="Palvelut">
+    <a href="/maksuton-nakyvyysanalyysi/">Maksuton näkyvyysanalyysi</a>
+    <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
+    <a href="/some-markkinointi-palveluyrityksille/">Sisällöt someen</a>
+    <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
+    <a href="/videoeditointi/">Lyhytvideoiden editointi</a>
+  </div>
+</div><a href="#hinnasto">Hinnasto</a><a class="nav-cta" href="#yhteys">Yhteys</a>
           </div>
         </nav>
       </div>
@@ -299,8 +381,9 @@
             </figure>
             <div class="about-text">
               <p>Aatos Marketingin takana olen minä, Aatos.</p>
-              <p>Autan paikallisia palveluyrityksiä tekemään sivustosta, somesta, sisällöstä ja asiakaspolusta selkeämmän, jotta uusi asiakas ymmärtää nopeasti mitä yritys tarjoaa ja miksi siihen kannattaa ottaa yhteyttä.</p>
-              <p>Monella yrityksellä itse palvelu on jo hyvä, mutta se ei aina näy verkossa tarpeeksi selkeästi. Siksi keskityn siihen, että yrityksen viesti, sisältö ja näkyvyys tukevat paremmin yhteydenottoja ja varauksia.</p>
+              <p>Aloitin tämän, koska huomasin miten monella paikallisella palveluyrityksellä itse palvelu voi olla hyvä, mutta verkossa se ei aina näy yhtä selkeästi. Asiakas ei välttämättä nopeasti ymmärrä, mitä yritys tarjoaa, kenelle palvelu sopii tai miksi juuri siihen kannattaa ottaa yhteyttä.</p>
+              <p>Siksi teen sivustoja, sisältöjä ja mainontaa käytännönläheisesti: ei monimutkaista markkinointijargonia, vaan selkeämpi kokonaisuus, jonka uusi asiakas ymmärtää nopeasti.</p>
+              <p>Tavoitteena on, että yrityksesi näyttää verkossa yhtä luotettavalta kuin se oikeasti on.</p>
             </div>
           </div>
         </div>
@@ -309,16 +392,27 @@
       <section class="section section-soft" id="palvelut">
         <div class="container">
           <div class="section-title">
-            <h2>Palvelut, joilla verkosta tulee selkeämpi myyntikanava</h2>
-            <p>Voimme aloittaa maksuttomasta näkyvyysanalyysistä tai valita suoraan palvelun, joka auttaa asiakasta löytämään, ymmärtämään ja ottamaan yhteyttä.</p>
+            <h2>Palvelut, joilla verkosta tulee aidosti toimiva myyntikanava</h2>
+            <p>Aloitetaan tarvittaessa maksuttomasta näkyvyysanalyysistä. Sen jälkeen rakennetaan selkeä sivusto, sisältö ja mainonta oikeassa järjestyksessä.</p>
             <div class="title-line"></div>
           </div>
-          <div class="service-grid">
-            <article class="card service-card featured"><span class="card-label">Suosituin aloitus</span><h3>Verkkosivut palveluyritykselle</h3><p>Selkeä sivu, joka kertoo mitä tarjoatte, kenelle palvelu sopii ja miten asiakas ottaa yhteyttä.</p><a class="card-cta" href="/verkkosivut-palveluyritykselle/">Lue lisää <span>→</span></a></article>
-            <article class="card service-card"><h3>Facebook- ja Instagram-mainonta</h3><p>Meta-mainonnan aloitus, kampanjarakenne ja kuukausihallinta selkeillä tavoitteilla.</p><a class="card-cta" href="/facebook-instagram-mainonta/">Lue lisää <span>→</span></a></article>
-            <article class="card service-card"><h3>Somepostaukset ja sisältö</h3><p>Sisältöä, joka tekee palvelusta ymmärrettävämmän ja vahvistaa luottamusta ennen yhteydenottoa.</p><a class="card-cta" href="/some-markkinointi-palveluyrityksille/">Lue lisää <span>→</span></a></article>
-            <article class="card service-card"><h3>Videoeditointi</h3><p>Lyhyitä ja selkeitä videoita someen, mainoksiin tai palvelun esittelyyn.</p><a class="card-cta" href="/videoeditointi/">Lue lisää <span>→</span></a></article>
-            <article class="card service-card"><h3>Maksuton näkyvyysanalyysi</h3><p>Käyn läpi sivut, somen ja asiakaspolun uuden asiakkaan näkökulmasta.</p><a class="card-cta" href="/maksuton-nakyvyysanalyysi/">Lue lisää <span>→</span></a></article>
+          <div class="service-path">
+            <article class="card service-start">
+              <div>
+                <span class="card-label">Aloita tästä</span>
+                <h3>Maksuton näkyvyysanalyysi</h3>
+                <p>Katsotaan sivusto, some ja asiakaspolku uuden asiakkaan näkökulmasta. Saat selkeän kuvan siitä, mikä kannattaa korjata ensin.</p>
+              </div>
+              <div class="service-actions">
+                <a class="btn btn-primary" href="#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a>
+                <a class="service-more" href="/maksuton-nakyvyysanalyysi/">Lue lisää</a>
+              </div>
+            </article>
+            <div class="service-main-grid">
+              <article class="card service-card featured"><span class="card-label">Usein ensimmäinen maksullinen askel</span><h3>Verkkosivut palveluyritykselle</h3><p>Selkeä sivusto tekee palvelusta ymmärrettävän, vahvistaa luottamusta ja ohjaa asiakkaan yhteydenottoon.</p><span class="price">alk. 500 €</span><a class="card-cta" href="/verkkosivut-palveluyritykselle/">Lue lisää <span>→</span></a></article>
+              <article class="card service-card"><h3>Sisällöt someen</h3><p>Still-postaukset, karusellit ja tekstit, jotka tekevät palvelustasi helpommin ymmärrettävän ja luotettavamman.</p><span class="price">alk. 250 €/kk</span><a class="card-cta" href="/some-markkinointi-palveluyrityksille/">Lue lisää <span>→</span></a></article>
+              <article class="card service-card"><h3>Facebook- ja Instagram-mainonta</h3><p>Kun sivusto ja viesti ovat kunnossa, mainonnalla ohjataan oikeita ihmisiä yhteydenottopolulle.</p><span class="price">alk. 300 €</span><a class="card-cta" href="/facebook-instagram-mainonta/">Lue lisää <span>→</span></a></article>
+            </div>
           </div>        </div>
       </section>
 
@@ -332,18 +426,17 @@
           <div class="pricing-grid">
             <article class="card"><h3>Maksuton näkyvyysanalyysi</h3><span class="price">0 €</span><p>Konkreettinen katsaus sivustoon, someen ja yhteydenottopolkuun.</p></article>
             <article class="card"><h3>Yksinkertainen verkkosivu palveluyritykselle</h3><span class="price">alk. 500 €</span><p>Selkeä myyntisivu tai pieni sivusto, joka ohjaa yhteydenottoon.</p></article>
-            <article class="card"><h3>Somepostauspaketti</h3><span class="price">alk. 250 €/kk</span><p>Säännöllistä sisältöä, joka tukee luottamusta ja näkyvyyttä.</p></article>
-            <article class="card"><h3>Videoeditointi</h3><span class="price">alk. 40 €/video</span><p>Lyhyiden some- ja mainosvideoiden editointi valmiista materiaalista.</p></article>
-            <article class="card"><h3>Meta-mainonnan aloitus</h3><span class="price">alk. 300 €</span><p>Kampanjan perusasetukset, rakenne ja ensimmäinen selkeä kokonaisuus.</p></article>
-            <article class="card"><h3>Mainonnan kuukausihallinta</h3><span class="price">alk. 250 €/kk</span><p>Kampanjan seuranta, optimointi ja kehittäminen sovitun tavoitteen mukaan.</p></article>
+            <article class="card"><h3>Some-sisältöpaketti</h3><span class="price">alk. 250 €/kk</span><p>Säännöllistä sisältöä, joka tukee luottamusta ja näkyvyyttä.</p></article>
+            <article class="card"><h3>Lyhytvideoiden editointi</h3><span class="price">alk. 40 €/video</span><p>Lyhyiden some- ja mainosvideoiden editointi valmiista materiaalista.</p></article>
+            <article class="card"><h3>Facebook- ja Instagram-mainonnan testijakso</h3><span class="price">alk. 300 €</span><p>Ensimmäinen kampanja, seuranta ja tulosten läpikäynti sovitulla testijaksolla. Jatkuva hallinta tai tulospohjainen malli sovitaan erikseen.</p></article>
           </div>
           <div class="pricing-note">
-            <p><strong>Mainosbudjetti ei sisälly palvelumaksuun</strong>, vaan se maksetaan erikseen suoraan mainosalustalle.</p>
+            <p>Hinnat ovat lähtöhintoja. Sopiva kokonaisuus katsotaan maksuttoman näkyvyysanalyysin jälkeen.</p>
             <p>Etkö tiedä mikä paketti sopii? Pyydä maksuton näkyvyysanalyysi.</p>
           </div>
           <div class="pricing-cta">
             <a class="btn btn-primary" href="#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a>
-            <a class="btn btn-secondary" href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle <span>→</span></a>
+            <a class="btn btn-secondary" href="#yhteys">Ota yhteyttä <span>→</span></a>
           </div>
         </div>
       </section>
@@ -365,7 +458,7 @@
           <div class="steps-wrap">
             <article class="card"><div class="step-number">1</div><h3>Katson sivut, somen ja asiakaspolun</h3><p>Käyn läpi, miten yritys näyttäytyy uuden asiakkaan silmissä.</p></article>
             <article class="card"><div class="step-number">2</div><h3>Ehdotan konkreettiset parannukset</h3><p>Saat selkeitä huomioita siitä, mitä voisi selkeyttää sivustolla, somessa, sisällössä tai yhteydenotossa.</p></article>
-            <article class="card"><div class="step-number">3</div><h3>Autan viemään ideat käytäntöön</h3><p>Tarvittaessa autan verkkosivujen, some- ja sisältöavun, videoiden sekä Meta-mainonnan kanssa.</p></article>
+            <article class="card"><div class="step-number">3</div><h3>Autan viemään ideat käytäntöön</h3><p>Tarvittaessa autan verkkosivujen, some- ja sisältöavun, videoiden sekä Facebook- ja Instagram-mainonnan kanssa.</p></article>
             <article class="card"><div class="step-number">4</div><h3>Seurataan mikä toimii</h3><p>Kehitetään tekemistä sen mukaan, mikä tuo lisää yhteydenottoja ja varauksia.</p></article>
           </div>
         </div>
@@ -398,7 +491,7 @@
                 <option value="En tiedä vielä">En tiedä vielä</option>
               </select>
               <button class="btn btn-primary" type="submit">Pyydä maksuton näkyvyysanalyysi <span>→</span></button>
-              <div class="privacy"><span>Käytän tietoja vain yhteydenottoon ja yrityksenne näkyvyysanalyysiin. Tietoja ei luovuteta eteenpäin.</span></div>
+              <div class="privacy"><svg class="privacy-lock" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7.8C8 5.15 9.7 3.5 12 3.5s4 1.65 4 4.3V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 14v2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Käytän tietoja vain yhteydenottoon ja yrityksenne näkyvyysanalyysiin. Tietoja ei luovuteta eteenpäin.</span></div>
             </form>
           </div>
         </div>
@@ -408,13 +501,13 @@
 
       <section class="section section-soft" id="faq">
         <div class="container">
-          <div class="section-title"><h2>Usein kysytyt kysymykset</h2><div class="title-line"></div></div>
+          <div class="section-title"><h2>Usein kysytyt</h2><div class="title-line"></div></div>
           <div class="faq-list">
-            <details class="faq-item"><summary>Sopiiko tämä meille?</summary><p>Tämä sopii paikalliselle palveluyritykselle, joka tarjoaa ajanvarauksella tai yhteydenotolla ostettavaa palvelua ja haluaa saada lisää asiakkaita verkon kautta.</p></details>
-            <details class="faq-item"><summary>Maksaako näkyvyysanalyysi jotain?</summary><p>Ei. Saat maksuttoman näkyvyysanalyysin siitä, miten yrityksesi näkyvyyttä, viestiä, somea tai asiakaspolkua voisi parantaa. Analyysi ei sido sinua mihinkään.</p></details>
-            <details class="faq-item"><summary>Voinko tilata pelkän verkkosivun?</summary><p>Kyllä. Yksinkertainen verkkosivu palveluyritykselle alkaa 500 eurosta. Tavoitteena on tehdä sivusta selkeä, luotettava ja yhteydenottoon ohjaava.</p></details>
-            <details class="faq-item"><summary>Teetkö vain maksettua mainontaa?</summary><p>En. Voin auttaa myös verkkosivujen, orgaanisen somen, sisältöjen suunnittelun, viestin selkeyttämisen ja asiakaspolun kehittämisen kanssa.</p></details>
-            <details class="faq-item"><summary>Mitä mainonta maksaa?</summary><p>Meta-mainonnan aloitus alkaa 300 eurosta ja kuukausihallinta 250 eurosta kuukaudessa. Varsinainen mainosbudjetti maksetaan erikseen suoraan mainosalustalle.</p></details>
+            <details class="faq-item"><summary>Kenelle Aatos Marketing sopii?</summary><p>Aatos Marketing sopii palveluyrityksille, jotka haluavat tehdä verkkonäkyvyydestään selkeämmän ja saada enemmän yhteydenottoja. Tyypillisesti autan yrityksiä, joilla on palvelu kunnossa, mutta sivusto, some tai mainonta ei vielä tue myyntiä tarpeeksi selkeästi.</p></details>
+            <details class="faq-item"><summary>Mistä kannattaa aloittaa?</summary><p>Usein järkevin aloitus on maksuton näkyvyysanalyysi. Siinä katsotaan sivusto, some ja yhteydenottopolku uuden asiakkaan näkökulmasta. Sen jälkeen on helpompi päättää, kannattaako ensin korjata sivusto, sisältö vai mainonta.</p></details>
+            <details class="faq-item"><summary>Pitääkö minun tietää valmiiksi mitä palvelua tarvitsen?</summary><p>Ei tarvitse. Voit ottaa yhteyttä, vaikka et olisi varma tarvitsetko verkkosivut, sisältöä vai mainontaa. Käyn tilanteen läpi ja ehdotan selkeää seuraavaa askelta.</p></details>
+            <details class="faq-item"><summary>Voidaanko aloittaa pienesti?</summary><p>Kyllä. Kaikkea ei tarvitse tehdä kerralla. Usein paras tapa on aloittaa yhdestä selkeästä kokonaisuudesta, kuten näkyvyysanalyysistä, yksinkertaisesta sivusta tai pienestä sisältöpaketista.</p></details>
+            <details class="faq-item"><summary>Miten hinnat määräytyvät?</summary><p>Hinnat riippuvat työn laajuudesta ja siitä, mitä kokonaisuuteen tarvitaan. Sivustolla näkyvät hinnat ovat lähtöhintoja, ja lopullinen kokonaisuus sovitaan aina ennen työn aloittamista.</p></details>
           </div>
           <div class="faq-cta"><p>Haluatko nähdä, missä kohtaa yrityksesi näkyvyyttä voisi parantaa?</p><a class="btn btn-primary" href="#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a></div>
         </div>
@@ -428,11 +521,11 @@
           <div><strong>Aatos Marketing</strong><p>Selkeämpää näkyvyyttä ja enemmän yhteydenottoja palveluyrityksille.</p></div>
         </div>
         <nav class="footer-links" aria-label="Palvelulinkit">
-          <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
-          <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
-          <a href="/some-markkinointi-palveluyrityksille/">Somepostaukset ja sisältö</a>
-          <a href="/videoeditointi/">Videoeditointi</a>
           <a href="/maksuton-nakyvyysanalyysi/">Maksuton näkyvyysanalyysi</a>
+          <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
+          <a href="/some-markkinointi-palveluyrityksille/">Sisällöt someen</a>
+          <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
+          <a href="/videoeditointi/">Lyhytvideoiden editointi</a>
         </nav>
         <div class="footer-social">
           <span class="footer-social-label">Seuraa somessa</span>
@@ -450,10 +543,30 @@
       navLinks.classList.toggle("open");
       menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
     });
+    const serviceDropdown = document.querySelector(".nav-service");
+    const serviceToggle = document.querySelector(".service-menu-toggle");
+    if (serviceDropdown && serviceToggle) {
+      serviceToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const isOpen = serviceDropdown.classList.toggle("open");
+        serviceToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.addEventListener("click", (event) => {
+        if (!serviceDropdown.contains(event.target)) {
+          serviceDropdown.classList.remove("open");
+          serviceToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
     document.querySelectorAll(".nav-links a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("open");
         menuBtn.textContent = "☰";
+        if (serviceDropdown && serviceToggle) {
+          serviceDropdown.classList.remove("open");
+          serviceToggle.setAttribute("aria-expanded", "false");
+        }
       });
     });
 
@@ -505,6 +618,23 @@
           }
         }
       });
+    }
+  
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealTargets = document.querySelectorAll(".hero, .section, .service-start, .service-card, .card, .price-panel, .contact-panel, .cta-panel, .footer");
+    revealTargets.forEach((el) => el.classList.add("reveal"));
+    if (reduceMotion) {
+      revealTargets.forEach((el) => el.classList.add("is-visible"));
+    } else {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      revealTargets.forEach((el) => revealObserver.observe(el));
     }
   </script>
 </body>
