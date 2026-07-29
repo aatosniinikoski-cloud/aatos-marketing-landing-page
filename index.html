@@ -209,6 +209,26 @@
     .nav-links { gap: clamp(18px, 2.4vw, 34px); }
     .nav-links a { white-space: nowrap; transition: color 180ms ease, border-color 180ms ease, background 180ms ease; }
     .nav-cta { border-color: rgba(242,184,59,0.62); background: rgba(242,184,59,0.08); }
+    .nav-service { position: relative; display: flex; align-items: center; }
+    .nav-service-row { display: flex; align-items: center; gap: 6px; }
+    .service-menu-toggle { width: 30px; height: 30px; display: inline-grid; place-items: center; border: 1px solid rgba(242,184,59,0.34); border-radius: 999px; background: rgba(242,184,59,0.08); color: rgba(255,255,255,0.82); cursor: pointer; line-height: 1; transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+    .service-menu-toggle:hover { color: var(--gold); border-color: rgba(242,184,59,0.58); background: rgba(242,184,59,0.12); }
+    .service-menu { position: absolute; top: calc(100% + 18px); left: 50%; width: min(300px, calc(100vw - 36px)); padding: 10px; border: 1px solid rgba(242,184,59,0.28); border-radius: 14px; background: linear-gradient(145deg, rgba(14,15,16,0.98), rgba(8,9,10,0.96)); box-shadow: 0 22px 60px rgba(0,0,0,0.42), 0 0 28px rgba(242,184,59,0.10); opacity: 0; visibility: hidden; pointer-events: none; transform: translate(-50%, 8px); transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease, border-color 180ms ease; z-index: 90; }
+    .service-menu a { display: block; padding: 11px 13px; border-radius: 10px; color: rgba(255,255,255,0.78); white-space: normal; line-height: 1.25; transition: color 180ms ease, background 180ms ease, transform 180ms ease; }
+    .service-menu a:hover { color: var(--gold); background: rgba(242,184,59,0.08); transform: translateX(2px); }
+    .nav-service:hover .service-menu,
+    .nav-service:focus-within .service-menu,
+    .nav-service.open .service-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
+    .nav-service.open .service-menu-toggle { color: var(--gold); border-color: rgba(242,184,59,0.58); transform: rotate(180deg); }
+    @media (max-width: 980px) {
+      .nav-service { display: block; border-radius: 10px; background: rgba(255,255,255,0.035); }
+      .nav-service-row { align-items: center; }
+      .nav-service-row > a { flex: 1; background: transparent; }
+      .service-menu-toggle { width: 42px; height: 42px; margin-right: 6px; }
+      .service-menu { position: static; display: none; width: auto; padding: 8px; margin: 0 8px 8px; opacity: 1; visibility: visible; pointer-events: auto; transform: none; box-shadow: none; border-color: rgba(242,184,59,0.20); background: rgba(0,0,0,0.18); }
+      .nav-service.open .service-menu { display: grid; gap: 4px; transform: none; }
+      .service-menu a { padding: 12px; background: rgba(255,255,255,0.028); }
+    }
     .card, .hero-card, .price-panel, .cta-panel, .direct-contact-card { transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease; will-change: transform; }
     .card:hover, .hero-card:hover, .price-panel:hover, .cta-panel:hover, .direct-contact-card:hover { transform: translateY(-5px); border-color: rgba(242,184,59,0.46); box-shadow: 0 0 34px rgba(242,184,59,0.12), 0 22px 70px rgba(0,0,0,0.34); }
     .service-grid { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 28px; align-items: stretch; }
@@ -239,22 +259,22 @@
     .footer-links a { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 180ms ease, border-color 180ms ease; }
     .footer-links a:hover { color: var(--gold); border-color: rgba(242,184,59,0.34); }
     .footer-social { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.78); }
-    .footer-social-label { color: rgba(255,255,255,0.62); }
+    .footer-social-label { color: rgba(255,255,255,0.62); font-size: 0.98rem; line-height: 1.2; }
     .footer-social .social,
     .social {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-size: 0.94rem;
+      gap: 11px;
+      font-size: 1rem;
       line-height: 1.2;
       color: rgba(255,255,255,0.78);
       transition: color 180ms ease, transform 180ms ease;
     }
     .footer-social .social svg,
     .social svg {
-      width: 24px;
-      height: 24px;
-      flex: 0 0 24px;
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
     }
     .footer-social .social:hover,
     .social:hover {
@@ -314,7 +334,19 @@
           </a>
           <button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button>
           <div class="nav-links" id="navLinks">
-            <a class="active" href="#palvelut">Palvelut</a><a href="#hinnasto">Hinnasto</a><a class="nav-cta" href="#yhteys">Yhteys</a>
+            <a class="active" href="/">Etusivu</a><div class="nav-service">
+  <div class="nav-service-row">
+    <a href="#palvelut">Palvelut</a>
+    <button class="service-menu-toggle" type="button" aria-label="Avaa palveluvalikko" aria-expanded="false">⌄</button>
+  </div>
+  <div class="service-menu" aria-label="Palvelut">
+    <a href="/maksuton-nakyvyysanalyysi/">Maksuton näkyvyysanalyysi</a>
+    <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
+    <a href="/some-markkinointi-palveluyrityksille/">Sisällöt someen</a>
+    <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
+    <a href="/videoeditointi/">Lyhytvideoiden editointi</a>
+  </div>
+</div><a href="#hinnasto">Hinnasto</a><a class="nav-cta" href="#yhteys">Yhteys</a>
           </div>
         </nav>
       </div>
@@ -349,8 +381,9 @@
             </figure>
             <div class="about-text">
               <p>Aatos Marketingin takana olen minä, Aatos.</p>
-              <p>Autan paikallisia palveluyrityksiä tekemään sivustosta, somesta, sisällöstä ja asiakaspolusta selkeämmän, jotta uusi asiakas ymmärtää nopeasti mitä yritys tarjoaa ja miksi siihen kannattaa ottaa yhteyttä.</p>
-              <p>Monella yrityksellä itse palvelu on jo hyvä, mutta se ei aina näy verkossa tarpeeksi selkeästi. Siksi keskityn siihen, että yrityksen viesti, sisältö ja näkyvyys tukevat paremmin yhteydenottoja ja varauksia.</p>
+              <p>Aloitin tämän, koska huomasin miten monella paikallisella palveluyrityksellä itse palvelu voi olla hyvä, mutta verkossa se ei aina näy yhtä selkeästi. Asiakas ei välttämättä nopeasti ymmärrä, mitä yritys tarjoaa, kenelle palvelu sopii tai miksi juuri siihen kannattaa ottaa yhteyttä.</p>
+              <p>Siksi teen sivustoja, sisältöjä ja mainontaa käytännönläheisesti: ei monimutkaista markkinointijargonia, vaan selkeämpi kokonaisuus, jonka uusi asiakas ymmärtää nopeasti.</p>
+              <p>Tavoitteena on, että yrityksesi näyttää verkossa yhtä luotettavalta kuin se oikeasti on.</p>
             </div>
           </div>
         </div>
@@ -440,7 +473,7 @@
               <p>Jätä yhteystietosi ja yrityksesi tiedot, niin katson sivut, somen ja asiakaspolun uuden asiakkaan näkökulmasta. Saat konkreettisia huomioita siitä, mitä voisi selkeyttää, jotta yhteydenottoja ja varauksia voisi syntyä enemmän. Vastaan 1-3 päivän sisällä.</p>
               <div class="checks"><div class="check">Maksuton näkyvyysanalyysi</div><div class="check">Tietosi pysyvät luottamuksellisina</div></div>
             </div>
-            <form class="form" action="https://api.web3forms.com/submit" method="POST">
+            <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="be1faa39-ab23-4b3e-87ac-1aafee211101">
               <input type="hidden" name="subject" value="Uusi yhteydenotto Aatos Marketing -sivulta">
               <input type="hidden" name="redirect" value="https://aatosmarketing.fi/kiitos.html">
@@ -470,11 +503,11 @@
         <div class="container">
           <div class="section-title"><h2>Usein kysytyt</h2><div class="title-line"></div></div>
           <div class="faq-list">
-            <details class="faq-item"><summary>Sopiiko tämä meille?</summary><p>Tämä sopii paikalliselle palveluyritykselle, joka tarjoaa ajanvarauksella tai yhteydenotolla ostettavaa palvelua ja haluaa saada lisää asiakkaita verkon kautta.</p></details>
-            <details class="faq-item"><summary>Maksaako näkyvyysanalyysi jotain?</summary><p>Ei. Saat maksuttoman näkyvyysanalyysin siitä, miten yrityksesi näkyvyyttä, viestiä, somea tai asiakaspolkua voisi parantaa. Analyysi ei sido sinua mihinkään.</p></details>
-            <details class="faq-item"><summary>Voinko tilata pelkän verkkosivun?</summary><p>Kyllä. Yksinkertainen verkkosivu palveluyritykselle alkaa 500 eurosta. Tavoitteena on tehdä sivusta selkeä, luotettava ja yhteydenottoon ohjaava.</p></details>
-            <details class="faq-item"><summary>Teetkö vain maksettua mainontaa?</summary><p>En. Voin auttaa myös verkkosivujen, orgaanisen somen, sisältöjen suunnittelun, viestin selkeyttämisen ja asiakaspolun kehittämisen kanssa.</p></details>
-            <details class="faq-item"><summary>Mitä mainonta maksaa?</summary><p>Facebook- ja Instagram-mainonnan testijakso alkaa 300 eurosta. Sopiva kokonaisuus ja mahdollinen jatko katsotaan maksuttoman näkyvyysanalyysin jälkeen.</p></details>
+            <details class="faq-item"><summary>Kenelle Aatos Marketing sopii?</summary><p>Aatos Marketing sopii palveluyrityksille, jotka haluavat tehdä verkkonäkyvyydestään selkeämmän ja saada enemmän yhteydenottoja. Tyypillisesti autan yrityksiä, joilla on palvelu kunnossa, mutta sivusto, some tai mainonta ei vielä tue myyntiä tarpeeksi selkeästi.</p></details>
+            <details class="faq-item"><summary>Mistä kannattaa aloittaa?</summary><p>Usein järkevin aloitus on maksuton näkyvyysanalyysi. Siinä katsotaan sivusto, some ja yhteydenottopolku uuden asiakkaan näkökulmasta. Sen jälkeen on helpompi päättää, kannattaako ensin korjata sivusto, sisältö vai mainonta.</p></details>
+            <details class="faq-item"><summary>Pitääkö minun tietää valmiiksi mitä palvelua tarvitsen?</summary><p>Ei tarvitse. Voit ottaa yhteyttä, vaikka et olisi varma tarvitsetko verkkosivut, sisältöä vai mainontaa. Käyn tilanteen läpi ja ehdotan selkeää seuraavaa askelta.</p></details>
+            <details class="faq-item"><summary>Voidaanko aloittaa pienesti?</summary><p>Kyllä. Kaikkea ei tarvitse tehdä kerralla. Usein paras tapa on aloittaa yhdestä selkeästä kokonaisuudesta, kuten näkyvyysanalyysistä, yksinkertaisesta sivusta tai pienestä sisältöpaketista.</p></details>
+            <details class="faq-item"><summary>Miten hinnat määräytyvät?</summary><p>Hinnat riippuvat työn laajuudesta ja siitä, mitä kokonaisuuteen tarvitaan. Sivustolla näkyvät hinnat ovat lähtöhintoja, ja lopullinen kokonaisuus sovitaan aina ennen työn aloittamista.</p></details>
           </div>
           <div class="faq-cta"><p>Haluatko nähdä, missä kohtaa yrityksesi näkyvyyttä voisi parantaa?</p><a class="btn btn-primary" href="#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a></div>
         </div>
@@ -510,12 +543,82 @@
       navLinks.classList.toggle("open");
       menuBtn.textContent = navLinks.classList.contains("open") ? "×" : "☰";
     });
+    const serviceDropdown = document.querySelector(".nav-service");
+    const serviceToggle = document.querySelector(".service-menu-toggle");
+    if (serviceDropdown && serviceToggle) {
+      serviceToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const isOpen = serviceDropdown.classList.toggle("open");
+        serviceToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.addEventListener("click", (event) => {
+        if (!serviceDropdown.contains(event.target)) {
+          serviceDropdown.classList.remove("open");
+          serviceToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
     document.querySelectorAll(".nav-links a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("open");
         menuBtn.textContent = "☰";
+        if (serviceDropdown && serviceToggle) {
+          serviceDropdown.classList.remove("open");
+          serviceToggle.setAttribute("aria-expanded", "false");
+        }
       });
     });
+
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonHtml = submitButton ? submitButton.innerHTML : "";
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.innerHTML = "Lähetetään...";
+        }
+
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+
+          let result = {};
+          try {
+            result = await response.json();
+          } catch (error) {
+            result = {};
+          }
+
+          if (response.ok && (result.success === true || response.status === 200)) {
+            window.location.href = "https://aatosmarketing.fi/kiitos.html";
+            return;
+          }
+
+          throw new Error(result.message || "Lomakkeen lähetys epäonnistui.");
+        } catch (error) {
+          alert("Lomakkeen lähetys ei onnistunut. Yritä hetken päästä uudelleen tai ota yhteyttä suoraan sähköpostilla.");
+
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonHtml || "Lähetä";
+          }
+        }
+      });
+    }
   
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealTargets = document.querySelectorAll(".hero, .section, .service-start, .service-card, .card, .price-panel, .contact-panel, .cta-panel, .footer");

@@ -94,6 +94,26 @@
     .nav-links { gap: clamp(18px, 2.4vw, 34px); }
     .nav-links a { white-space: nowrap; transition: color 180ms ease, border-color 180ms ease, background 180ms ease; }
     .nav-cta { border-color: rgba(242,184,59,0.62); background: rgba(242,184,59,0.08); }
+    .nav-service { position: relative; display: flex; align-items: center; }
+    .nav-service-row { display: flex; align-items: center; gap: 6px; }
+    .service-menu-toggle { width: 30px; height: 30px; display: inline-grid; place-items: center; border: 1px solid rgba(242,184,59,0.34); border-radius: 999px; background: rgba(242,184,59,0.08); color: rgba(255,255,255,0.82); cursor: pointer; line-height: 1; transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+    .service-menu-toggle:hover { color: var(--gold); border-color: rgba(242,184,59,0.58); background: rgba(242,184,59,0.12); }
+    .service-menu { position: absolute; top: calc(100% + 18px); left: 50%; width: min(300px, calc(100vw - 36px)); padding: 10px; border: 1px solid rgba(242,184,59,0.28); border-radius: 14px; background: linear-gradient(145deg, rgba(14,15,16,0.98), rgba(8,9,10,0.96)); box-shadow: 0 22px 60px rgba(0,0,0,0.42), 0 0 28px rgba(242,184,59,0.10); opacity: 0; visibility: hidden; pointer-events: none; transform: translate(-50%, 8px); transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease, border-color 180ms ease; z-index: 90; }
+    .service-menu a { display: block; padding: 11px 13px; border-radius: 10px; color: rgba(255,255,255,0.78); white-space: normal; line-height: 1.25; transition: color 180ms ease, background 180ms ease, transform 180ms ease; }
+    .service-menu a:hover { color: var(--gold); background: rgba(242,184,59,0.08); transform: translateX(2px); }
+    .nav-service:hover .service-menu,
+    .nav-service:focus-within .service-menu,
+    .nav-service.open .service-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
+    .nav-service.open .service-menu-toggle { color: var(--gold); border-color: rgba(242,184,59,0.58); transform: rotate(180deg); }
+    @media (max-width: 980px) {
+      .nav-service { display: block; border-radius: 10px; background: rgba(255,255,255,0.035); }
+      .nav-service-row { align-items: center; }
+      .nav-service-row > a { flex: 1; background: transparent; }
+      .service-menu-toggle { width: 42px; height: 42px; margin-right: 6px; }
+      .service-menu { position: static; display: none; width: auto; padding: 8px; margin: 0 8px 8px; opacity: 1; visibility: visible; pointer-events: auto; transform: none; box-shadow: none; border-color: rgba(242,184,59,0.20); background: rgba(0,0,0,0.18); }
+      .nav-service.open .service-menu { display: grid; gap: 4px; transform: none; }
+      .service-menu a { padding: 12px; background: rgba(255,255,255,0.028); }
+    }
     .card, .hero-card, .price-panel, .cta-panel, .direct-contact-card { transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease; will-change: transform; }
     .card:hover, .hero-card:hover, .price-panel:hover, .cta-panel:hover, .direct-contact-card:hover { transform: translateY(-5px); border-color: rgba(242,184,59,0.46); box-shadow: 0 0 34px rgba(242,184,59,0.12), 0 22px 70px rgba(0,0,0,0.34); }
     .service-grid { grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 28px; align-items: stretch; }
@@ -117,22 +137,22 @@
     .footer-links a { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: color 180ms ease, border-color 180ms ease; }
     .footer-links a:hover { color: var(--gold); border-color: rgba(242,184,59,0.34); }
     .footer-social { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.78); }
-    .footer-social-label { color: rgba(255,255,255,0.62); }
+    .footer-social-label { color: rgba(255,255,255,0.62); font-size: 0.98rem; line-height: 1.2; }
     .footer-social .social,
     .social {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-size: 0.94rem;
+      gap: 11px;
+      font-size: 1rem;
       line-height: 1.2;
       color: rgba(255,255,255,0.78);
       transition: color 180ms ease, transform 180ms ease;
     }
     .footer-social .social svg,
     .social svg {
-      width: 24px;
-      height: 24px;
-      flex: 0 0 24px;
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
     }
     .footer-social .social:hover,
     .social:hover {
@@ -183,7 +203,19 @@
 </head>
 <body>
   <div class="page">
-    <header class="header"><div class="container"><nav class="nav"><a class="brand" href="/" aria-label="Aatos Marketing etusivu"><img class="brand-logo" src="/AM_logo.png" alt="Aatos Marketing logo"><div class="brand-text"><strong>AATOS</strong><span>MARKETING</span></div></a><button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button><div class="nav-links" id="navLinks"><a href="/#palvelut">Palvelut</a><a href="/#hinnasto">Hinnasto</a><a class="nav-cta" href="/#yhteys">Yhteys</a></div></nav></div></header>
+    <header class="header"><div class="container"><nav class="nav"><a class="brand" href="/" aria-label="Aatos Marketing etusivu"><img class="brand-logo" src="/AM_logo.png" alt="Aatos Marketing logo"><div class="brand-text"><strong>AATOS</strong><span>MARKETING</span></div></a><button class="menu-btn" id="menuBtn" aria-label="Avaa valikko">☰</button><div class="nav-links" id="navLinks"><a href="/">Etusivu</a><div class="nav-service">
+  <div class="nav-service-row">
+    <a href="/#palvelut">Palvelut</a>
+    <button class="service-menu-toggle" type="button" aria-label="Avaa palveluvalikko" aria-expanded="false">⌄</button>
+  </div>
+  <div class="service-menu" aria-label="Palvelut">
+    <a href="/maksuton-nakyvyysanalyysi/">Maksuton näkyvyysanalyysi</a>
+    <a href="/verkkosivut-palveluyritykselle/">Verkkosivut palveluyritykselle</a>
+    <a href="/some-markkinointi-palveluyrityksille/">Sisällöt someen</a>
+    <a href="/facebook-instagram-mainonta/">Facebook- ja Instagram-mainonta</a>
+    <a href="/videoeditointi/">Lyhytvideoiden editointi</a>
+  </div>
+</div><a href="/#hinnasto">Hinnasto</a><a class="nav-cta" href="/#yhteys">Yhteys</a></div></nav></div></header>
 
     <main>
       <section class="hero"><div class="container hero-inner"><div><p class="eyebrow">Maksuton näkyvyysanalyysi</p><h1><span class="gold">Maksuton näkyvyysanalyysi</span> palveluyritykselle</h1><p class="lead">Katson sivuston, somen ja yhteydenottopolun uuden asiakkaan näkökulmasta ja annan konkreettisia huomioita siitä, mikä voisi estää yhteydenottoja.</p><div class="actions"><a class="btn btn-primary" href="/#yhteys">Pyydä maksuton näkyvyysanalyysi <span>→</span></a><a class="btn btn-secondary" href="#sisalto">Mitä analyysissä katsotaan <span>→</span></a></div></div><aside class="hero-card"><h2>Hinta 0 €</h2><ul class="check-list"><li>Sivuston ensivaikutelma</li><li>Somen ja sisällön selkeys</li><li>Yhteydenottopolku</li><li>Konkreettiset parannusideat</li></ul></aside></div></section>
@@ -224,7 +256,22 @@
       </div>
     </footer>
   </div>
-  <script>const menuBtn=document.getElementById("menuBtn");const navLinks=document.getElementById("navLinks");menuBtn.addEventListener("click",()=>{navLinks.classList.toggle("open");menuBtn.textContent=navLinks.classList.contains("open")?"×":"☰";});document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{navLinks.classList.remove("open");menuBtn.textContent="☰";});});
+  <script>const menuBtn=document.getElementById("menuBtn");const navLinks=document.getElementById("navLinks");menuBtn.addEventListener("click",()=>{navLinks.classList.toggle("open");menuBtn.textContent=navLinks.classList.contains("open")?"×":"☰";});    const serviceDropdown = document.querySelector(".nav-service");
+    const serviceToggle = document.querySelector(".service-menu-toggle");
+    if (serviceDropdown && serviceToggle) {
+      serviceToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const isOpen = serviceDropdown.classList.toggle("open");
+        serviceToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.addEventListener("click", (event) => {
+        if (!serviceDropdown.contains(event.target)) {
+          serviceDropdown.classList.remove("open");
+          serviceToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    }document.querySelectorAll(".nav-links a").forEach(link=>{link.addEventListener("click",()=>{navLinks.classList.remove("open");menuBtn.textContent="☰";if(serviceDropdown&&serviceToggle){serviceDropdown.classList.remove("open");serviceToggle.setAttribute("aria-expanded","false");}});});
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealTargets = document.querySelectorAll(".hero, .section, .service-start, .service-card, .card, .price-panel, .contact-panel, .cta-panel, .footer");
     revealTargets.forEach((el) => el.classList.add("reveal"));
