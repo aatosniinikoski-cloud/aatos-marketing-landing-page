@@ -163,6 +163,55 @@
     .social { display: inline-flex; align-items: center; gap: 10px; }
     .social svg { width: 24px; height: 24px; }
 
+    .testimonial-section { padding: clamp(44px, 6vw, 72px) 0; }
+    .testimonial {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin: 0;
+      padding: clamp(36px, 5vw, 68px);
+      border: 1px solid rgba(242,184,59,0.38);
+      border-radius: 24px;
+      background: radial-gradient(circle at 8% 0%, rgba(242,184,59,0.08), transparent 34%), linear-gradient(145deg, rgba(22,21,15,0.98), rgba(13,14,12,0.98));
+      box-shadow: 0 22px 70px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.025);
+    }
+    .testimonial--compact { max-width: 1120px; margin-inline: auto; }
+    .testimonial--featured { max-width: 1120px; margin-inline: auto; padding-block: clamp(42px, 6vw, 76px); }
+    .testimonial__mark {
+      position: absolute;
+      top: clamp(24px, 3vw, 42px);
+      right: clamp(26px, 4vw, 56px);
+      color: var(--gold);
+      font-size: clamp(5rem, 9vw, 8.5rem);
+      font-weight: 900;
+      line-height: 0.72;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .testimonial .eyebrow {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-right: 72px;
+      margin-bottom: clamp(28px, 4vw, 46px);
+    }
+    .testimonial .eyebrow::before { width: 42px; height: 1px; background: var(--gold); content: ""; flex: 0 0 auto; }
+    .testimonial blockquote { position: relative; z-index: 1; margin: 0; }
+    .testimonial blockquote p {
+      max-width: 65ch;
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(1.35rem, 2.15vw, 2.05rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.55;
+    }
+    .testimonial--featured blockquote p { max-width: 70ch; font-size: clamp(1.4rem, 2.25vw, 2.2rem); }
+    .testimonial figcaption { position: relative; z-index: 1; margin-top: clamp(30px, 4vw, 50px); padding-top: clamp(22px, 3vw, 30px); border-top: 1px solid rgba(255,255,255,0.12); }
+    .testimonial cite { color: var(--gold); font-size: 0.9rem; font-style: normal; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+
     @media (max-width: 1100px) { .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 980px) {
       .container { width: min(100% - 34px, var(--max)); }
@@ -193,6 +242,13 @@
       .footer-inner { flex-direction: column; gap: 13px; }
       .footer-line { display: none; }
       .footer-links { flex-direction: column; align-items: center; gap: 10px; }
+      .testimonial-section { padding: 40px 0; }
+      .testimonial, .testimonial--featured { padding: 30px 24px; border-radius: 20px; }
+      .testimonial__mark { top: 24px; right: 20px; font-size: 4.7rem; }
+      .testimonial .eyebrow { gap: 10px; padding-right: 54px; margin-bottom: 26px; }
+      .testimonial .eyebrow::before { width: 30px; }
+      .testimonial blockquote p, .testimonial--featured blockquote p { font-size: clamp(1.1rem, 5.2vw, 1.35rem); line-height: 1.52; }
+      .testimonial figcaption { margin-top: 28px; padding-top: 22px; }
     }
   
     /* Visual finishing pass: premium cards, light navigation and branded footer. */
@@ -404,6 +460,19 @@
               <p>Tavoitteena on, että yrityksesi näyttää verkossa yhtä luotettavalta kuin se oikeasti on.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="section testimonial-section" aria-label="Asiakaskokemus">
+        <div class="container">
+          <figure class="testimonial testimonial--compact">
+            <span class="testimonial__mark" aria-hidden="true">“</span>
+            <p class="eyebrow">ASIAKASKOKEMUS</p>
+            <blockquote>
+              <p>Yhteistyö Aatos Marketingin kanssa sujui mukavasti ja rakentavasti. Minua kuunneltiin ja näkemykseni otettiin hyvin huomioon. Olin tyytyväinen lopullisiin sisältöihin – tyyli ja värit tuntuivat omilta ja heijastivat hyvin minua.</p>
+            </blockquote>
+            <figcaption><cite>SIRPA AUNULA · AUNULA AUTHENTIC</cite></figcaption>
+          </figure>
         </div>
       </section>
 
