@@ -12,6 +12,7 @@
   let metaLoaded = false;
   let metaPageViewSent = false;
   let fetchWrapped = false;
+  let ghlLoaded = false;
 
   function readPreference() {
     try {
@@ -214,6 +215,16 @@
     sendMetaLead();
   }
 
+  function loadGhlTracking() {
+    if (ghlLoaded) return;
+
+    ghlLoaded = true;
+    const script = document.createElement("script");
+    script.src = "https://link.msgsndr.com/js/external-tracking.js";
+    script.setAttribute("data-tracking-id", "tk_32dba77a8d6b4dd1af678c5538b3e9d3");
+    document.body.appendChild(script);
+  }
+
   function applyPreference(preference, persist) {
     const normalized = {
       analytics: preference.analytics === true,
@@ -236,6 +247,14 @@
     }
 
     if (persist) savePreference(normalized);
+
+    // GHL captures both page activity and lead data, so require both categories.
+    if (normalized.analytics && normalized.marketing) {
+      loadGhlTracking();
+    } else if (ghlLoaded) {
+      // Removing a script cannot stop its listeners; reload with the saved choice.
+      window.location.reload();
+    }
   }
 
   function buildInterface() {
@@ -248,7 +267,7 @@
     banner.setAttribute("aria-labelledby", "aatos-cookie-title");
     banner.innerHTML = [
       '<h2 class="aatos-cookie-title" id="aatos-cookie-title">Evästeasetukset</h2>',
-      '<p class="aatos-cookie-copy">Sivustomme käyttää välttämättömiä evästeitä sivuston toimintaan. Suostumuksellasi käytämme lisäksi analytiikkaevästeitä sivuston kehittämiseen sekä markkinointievästeitä mainonnan mittaamiseen.</p>',
+      '<p class="aatos-cookie-copy">Sivustomme käyttää välttämättömiä evästeitä sivuston toimintaan. Suostumuksellasi käytämme lisäksi analytiikkaevästeitä sivuston kehittämiseen sekä markkinointievästeitä mainonnan mittaamiseen. GoHighLevel (HighLevel LLC) kerää käynti- ja liikenteen lähdetietoja sekä lomakkeella antamiasi tietoja yhteydenottojen ja mainonnan mittaamiseksi vain, kun hyväksyt sekä analytiikan että markkinoinnin. Voit perua suostumuksesi Evästeasetukset-painikkeesta.</p>',
       '<div class="aatos-cookie-actions">',
       '<button class="aatos-cookie-button aatos-cookie-button--primary" type="button" data-cookie-action="accept">Hyväksy kaikki</button>',
       '<button class="aatos-cookie-button" type="button" data-cookie-action="reject">Vain välttämättömät</button>',
@@ -256,8 +275,8 @@
       '</div>',
       '<div id="aatos-cookie-settings" hidden>',
       '<label class="aatos-cookie-choice"><input type="checkbox" checked disabled><span><strong>Välttämättömät</strong><span>Tarvitaan sivuston ja evästevalintojen toimintaan.</span></span></label>',
-      '<label class="aatos-cookie-choice"><input id="aatos-consent-analytics" type="checkbox"><span><strong>Analytiikka</strong><span>Google Analytics auttaa ymmärtämään sivuston käyttöä ja onnistuneita yhteydenottoja.</span></span></label>',
-      '<label class="aatos-cookie-choice"><input id="aatos-consent-marketing" type="checkbox"><span><strong>Markkinointi</strong><span>Meta Pixel auttaa mittaamaan Facebook- ja Instagram-mainonnan tuloksia.</span></span></label>',
+      '<label class="aatos-cookie-choice"><input id="aatos-consent-analytics" type="checkbox"><span><strong>Analytiikka</strong><span>Google Analytics auttaa ymmärtämään sivuston käyttöä ja onnistuneita yhteydenottoja. GoHighLevel mittaa lisäksi käyntejä ja yhteydenottoja, jos hyväksyt myös markkinoinnin.</span></span></label>',
+      '<label class="aatos-cookie-choice"><input id="aatos-consent-marketing" type="checkbox"><span><strong>Markkinointi</strong><span>Meta Pixel auttaa mittaamaan Facebook- ja Instagram-mainonnan tuloksia. GoHighLevel yhdistää lomaketietoja käynteihin ja liikenteen lähteisiin, jos hyväksyt myös analytiikan.</span></span></label>',
       '<div class="aatos-cookie-actions"><button class="aatos-cookie-button aatos-cookie-button--primary" type="button" data-cookie-action="save">Tallenna valinta</button></div>',
       '</div>'
     ].join("");
